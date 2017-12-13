@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-v2.0.3.js"></script>
+    <script>
+       window.onload=function(){
+            new Vue({
+                el:"#box",
+                data:{
+                    msg:112300
+                },
+                methods:{
+                    change(){
+                        alert("改变了");
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    {{msg | currency}}
+</div>
+</body>
+</html>

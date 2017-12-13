@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <script>
+        window.onload=function(){
+            var vm=new Vue({
+                el:"#box",
+                data:{
+
+                },
+                methods:{
+                    show:function(e){
+                        alert("您按了回车");
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text" @keyup.13="show($event)">
+</div>
+</body>
+</html>

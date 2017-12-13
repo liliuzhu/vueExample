@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 7demo</title>
+    <script src="js/vue-v2.3.2.js"></script>
+</head>
+<body>
+    <!--<div id="app">
+        <my-header>
+            <h2>我是标题</h2>
+        </my-header>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            components:{
+                "my-header":{
+                    template:'<div>我是头部：<slot></slot></div>'
+                }
+            }
+        });
+
+    </script>-->
+    <!--<div id="app">
+        <my-header>
+            <my-title></my-title>
+        </my-header>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            components:{
+                "my-header":{
+                    template:'<div>我是头部：<slot></slot></div>'
+                },
+                "my-title":{
+                    template:" <h2>我是标题</h2>"
+                }
+            }
+        });
+
+    </script>-->
+    <div id="app">
+        <my-header>
+            <button slot="left">←</button>
+            <!--<button slot="right">→</button>-->
+            <my-title slot="right"></my-title>
+        </my-header>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            components:{
+                "my-header":{
+                    template:'<div><slot name="left"></slot>我是头部：<slot name="right"><button slot="right">+</button></slot></div>'
+                },
+                "my-title":{
+                    template:" <h2>我是标题</h2>"
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

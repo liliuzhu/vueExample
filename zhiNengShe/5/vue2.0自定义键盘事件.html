@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <script>
+       // Vue.directive("on").keyCodes.ctrl=13;
+//        Vue.config.keyCodes.ctrl=17;
+       window.onload=function(){
+            new Vue({
+                el:"#box",
+                data:{
+
+                },
+                methods:{
+                    change(){
+                        alert("改变了");
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text"  @click.ctrl="change">
+</div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>vue 10demo</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        #header{
+            width: 100%;
+            height: 40px;
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+        }
+        #header button{height: 100%;padding: 0 5px;position: absolute;top:0;}
+        #header button:nth-of-type(1){left: 0;}
+        #header button:nth-of-type(2){right: 0;}
+        #list{
+            position: relative;
+            top:40px;
+            overflow: hidden;
+        }
+        #list .list_user p{background-color: #ccc;padding-left: 10px;}
+        #list .list_user ul li{
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #ccc;
+            padding-left: 10px;
+        }
+        #list .list_user ul li span{
+            float: right;
+            margin-right: 15%;
+        }
+        #list .list_index{
+            position: fixed;
+            right: 10px;
+            top:50%;
+            font-size: 20px;
+        }
+        #list .list_index li{
+            margin: 5px 0;
+        }
+        #alert{
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 200;
+            background-color: rgba(0,0,0,.5);
+            display: none;
+        }
+        #alert .alert_content{
+            width: 200px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin: auto;
+            position: relative;
+        }
+        #alert .alert_title{
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        #alert .alert_body{
+            /*height: 50px;*/
+            line-height: 50px;
+            text-align: center;
+        }
+        #alert .alert_btn{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        #alert .alert_btn button{
+            margin: 10px ;
+            padding: 5px;
+        }
+    </style>
+    <script src="./js/vue-v2.3.2.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-header custom-title="通讯录" costom-fixed>
+            <button @touchstart="backBtn" slot="left">返回</button>
+            <button @touchstart="homeBtn" slot="right">主页</button>
+        </my-header>
+        <my-list :user-data="userData"></my-list>
+        <my-alert custom-title="呼叫">
+            <div class="alert_btn">
+                <button @touchstart="confirmBtn">确认</button>
+                <button @touchstart="cancelBtn">取消</button>
+            </div>
+        </my-alert>
+    </div>
+    <script>
+        var userData=[
+            {index:"A",users:[
+                {name:"a1",tel:"1301111111"},
+                {name:"a2",tel:"1301111112"},
+                {name:"a3",tel:"1301111113"}
+            ]},
+            {index:"B",users:[
+                {name:"b1",tel:"1301111114"},
+                {name:"b2",tel:"1301111115"},
+                {name:"b3",tel:"1301111116"}
+            ]},
+            {index:"C",users:[
+                {name:"c1",tel:"1301111117"},
+                {name:"c2",tel:"1301111118"},
+                {name:"c3",tel:"1301111119"}
+            ]},
+            {index:"D",users:[
+                {name:"d1",tel:"1301111121"},
+                {name:"d2",tel:"1301111122"},
+                {name:"d3",tel:"1301111123"}
+            ]},
+            {index:"E",users:[
+                {name:"e1",tel:"1301111124"},
+                {name:"e2",tel:"1301111125"},
+                {name:"e3",tel:"1301111126"}
+            ]},
+            {index:"F",users:[
+                {name:"f1",tel:"1301111127"},
+                {name:"f2",tel:"1301111127"},
+                {name:"f3",tel:"1301111129"}
+            ]}
+        ];
+        var busVM=new Vue();
+        Vue.component("my-header",{
+            template:`<div id="header" :style="{'position' : costomFixed ?'fixed':'absolute'}">
+                           <slot name="left"></slot>
+                           {{customTitle}}
+                           <slot name="right"></slot>
+
+                      </div>`,
+            props:{
+                "customTitle":{
+                    type:String,
+                    default:"标题"
+                },
+                "costomFixed":{
+                    type:Boolean,
+                    default:false
+                }
+            }
+        });
+        Vue.component("my-list",{
+            template:`<div id="list">
+                        <ul class="list_user" ref="listUser" @touchmove="bMove=true">
+                            <li v-for="item in userData">
+                                <p>{{item.index}}</p>
+                                <ul>
+                                    <li @touchend="showTel(user)" v-for="user in item.users">{{user.name}}
+                                    <span>{{user.tel}}</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="list_index" ref="listIndex">
+                            <li @touchstart="setScroll" v-for="item in userIndex">{{item}}</li>
+                        </ul>
+                    </div>`,
+            data:function(){
+              return {
+                  bMove:false
+              }
+            },
+            props:{
+                userData:{
+                    type:Array,
+                    default:[]
+                }
+            },
+            computed:{
+                userIndex:function(){
+                    return this.filterIndex(userData);
+                }
+            },
+            methods:{
+                filterIndex:function(data){
+                    var result=[];
+                    for(var i=0;i<data.length;i++){
+                        if(data[i].index){
+                            result.push(data[i].index);
+                        }
+                    }
+                    return result;
+                },
+                setListIndexPos:function(){
+                    var listIndex=this.$refs.listIndex;
+                    var iH=listIndex.offsetHeight;
+                    listIndex.style.marginTop=-iH/2+"px";
+                },
+                setScroll:function(ev){
+                    var aP=this.$refs.listUser.getElementsByTagName("p");
+                    for(var i=0;i<aP.length;i++){
+                        if(aP[i].innerHTML==ev.target.innerHTML){
+                            document.body.scrollTop=aP[i].offsetTop;
+                            break;
+                        }
+                    }
+                },
+                showTel:function(user){
+                    if(!this.bMove){
+                        var obj={name:user.name,tel:user.tel};
+                        busVM.$emit("changeEvents",obj);
+                    }else{
+                        this.bMove=false;
+                    }
+                }
+            },
+            mounted:function(){
+                this.setListIndexPos();
+            }
+        });
+        Vue.component("my-alert",{
+            template:`<div id="alert" ref="alert">
+                        <div class="alert_content">
+                            <div class="alert_title"><h3>{{customTitle}}</h3></div>
+                            <div class="alert_body">{{customBody}}</div>
+                            <slot></slot>
+                        </div>
+                    </div>`,
+            data:function(){
+                return{
+                    customBody:""
+                }
+            },
+            props:{
+                customTitle:{
+                    type:String,
+                    default:"弹窗"
+                }
+            },
+            mounted:function(){
+                busVM.$on("changeEvents",function(user){
+                    this.customBody=user.name+":"+user.tel;
+                    this.$refs.alert.style.display="flex";
+                }.bind(this))
+            }
+        });
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                userData:userData
+            },
+            methods:{
+                backBtn:function(){
+                    alert(123);
+                },
+                homeBtn:function(){
+                    alert(456);
+                },
+                confirmBtn:function(){
+                    console.log("确认");
+                    this.$children[2].$el.style.display="none";
+                },
+                cancelBtn:function(){
+                    console.log("取消");
+//                    console.log(this);
+                    this.$children[2].$el.style.display="none";
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

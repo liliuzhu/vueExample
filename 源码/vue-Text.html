@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue-v2.3.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding:0;
+    }
+    #demo{
+        position: relative;
+    }
+    #demo div{
+        width:200px;
+        height: 200px;
+        background:red;
+        position:absolute;
+    }
+</style>
+<body>
+<div id="demo">
+    <div v-col></div>
+    <div v-col></div>
+</div>
+</body>
+<script type="text/javascript">
+    var vm=new Vue({
+        el:'#demo',
+        directives:{
+            'col':function(el,bindding){
+                el.onmousedown=function(e){
+                    var evt=e||event
+                    var ox=evt.clientX-el.offsetLeft;
+                    var oy=evt.clientY-el.offsetTop;
+
+                    document.onmousemove=function(e){
+                        var evt=e||event;
+                        var oxx=evt.clientX-ox;
+                        var oyy=evt.clientY-oy;
+
+                        el.style.left=oxx+'px';
+                        el.style.top=oyy+'px';
+                    }
+
+                    document.onmouseup=function(e){
+
+                        document.onmousedown=null;
+                        document.onmousemove=null;
+                    }
+
+                }
+            }
+        }
+    })
+</script>
+</html>

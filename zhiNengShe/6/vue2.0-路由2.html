@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-v2.0.3.js"></script>
+    <script src="bower_components/vue-router/dist/vue-router.min.js"></script>
+    <style>
+        .router-link-active{
+            font-size: 20px;
+            color:#f60;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>
+        <router-link to="/home">主页</router-link>
+        <router-link to="/news">新闻</router-link>
+    </div>
+    <div>
+        <router-view></router-view>
+    </div>
+</div>
+<script>
+    var Home={
+        template:'<h3>我是主页</h3>'
+    };
+    var News={
+        template:'<h3>我是新闻</h3>'
+    };
+    //配置路由
+    const routes=[
+        {path:'/home',component:Home},
+        {path:'/news',component:News},
+        {path:'*',redirect:'/home'}
+
+    ];
+    //生成路由实例
+    const router=new VueRouter({routes});
+    //左最后挂到Vue
+    new Vue({
+        router:router,
+        el:"#box"
+    })
+</script>
+</body>
+</html>

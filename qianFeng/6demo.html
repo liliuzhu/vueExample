@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 6demo</title>
+    <script src="js/vue-v2.3.2.js"></script>
+    <script src="./js/vuex.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div><h2>{{count}}</h2></div>
+        <my-addbtn :count="count"></my-addbtn>
+        <my-removebtn :count="count"></my-removebtn>
+    </div>
+    <!--<script>
+        var busVM = new Vue();
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                count:0
+            },
+            mounted:function(){
+                busVM.$on("changeEvents",function(num){
+                    this.count=num;
+                }.bind(this));
+            },
+            components:{
+                "my-addbtn":{
+                    template:'<button @click="setCount">+{{count}}</button>',
+                    props:['count'],
+                    methods:{
+                        setCount:function(){
+                            busVM.$emit("changeEvents",++this.count);
+                        }
+                    }
+                },
+                "my-removebtn":{
+                    template:'<button @click="setCount">-{{count}}</button>',
+                    props:['count'],
+                    methods:{
+                        setCount:function(){
+                            busVM.$emit("changeEvents",&#45;&#45;this.count);
+                        }
+                    }
+                }
+            },
+        });
+
+    </script>-->
+    <script>
+        var store=new Vuex.Store({
+            state:{
+                count:0
+            },
+            mutations:{
+                add:function(state){
+                    state.count++;
+                },
+                remove:function(state){
+                    state.count--;
+                }
+            }
+        });
+        var vm=new Vue({store,
+            el:"#app",
+            computed:{
+                count:function(){
+                    return store.state.count;
+                }
+            },
+            components:{
+                "my-addbtn":{
+                    template:'<button @click="setCount">+{{count}}</button>',
+                    props:['count'],
+                    methods:{
+                        setCount:function(){
+                           store.commit("add");
+                        }
+                    }
+                },
+                "my-removebtn":{
+                    template:'<button @click="setCount">-{{count}}</button>',
+                    props:['count'],
+                    methods:{
+                        setCount:function(){
+                            store.commit("remove");
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

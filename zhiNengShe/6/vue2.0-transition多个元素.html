@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+        p{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin: 10px auto;
+        }
+    </style>
+    <script src="../vue-v2.0.3.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:"#box",
+                data:{
+                    show:false
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="点击显示隐藏" @click="show=!show">
+    <transition-group enter-active-class="zoomInLeft"
+                leave-active-class="zoomOutRight"
+    >
+        <p v-show="show" class="animated" :key="1"></p>
+        <p v-show="show" class="animated" :key="2"></p>
+    </transition-group>
+</div>
+</body>
+</html>

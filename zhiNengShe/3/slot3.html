@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <aaa>
+            <ul slot="ul-slot">
+                <li>111</li>
+                <li>222</li>
+                <li>333</li>
+            </ul>
+            <ol slot="ol-slot">
+                <li>111</li>
+                <li>222</li>
+                <li>333</li>
+            </ol>
+        </aaa>
+        <hr>
+        <aaa></aaa>
+    </div>
+    <template id="aaa">
+        <h1>XXX</h1>
+        <slot name="ol-slot">这是默认的情况</slot>
+        <slot name="ul-slot">这是默认的情况2</slot>
+        <p>welcome vue</p>
+    </template>
+    <script>
+        var vm=new Vue({
+            el:"#box",
+            data:{
+                a:'bbb'
+            },
+            components:{
+                "aaa":{
+                    data(){
+                        return {
+                            msg:111,
+                            msg2:"我是父组件的数据"
+                        }
+                    },
+                    template:'#aaa'
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

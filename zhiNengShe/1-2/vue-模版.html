@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <style>
+        .red_color{
+            color:red;
+        }
+        .bg_blue{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var vm=new Vue({
+                el:"#box",
+                data:{
+                    msg:"abc"
+                },
+                methods:{
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg">
+    <br>
+    {{msg}}
+    <br>
+    <span v-once="msg">{{msg}}</span>
+    <br>
+    <div v-html="msg"></div>
+</div>
+</body>
+</html>

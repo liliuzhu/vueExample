@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+    <template id="aaa">
+        <span>我是父级-->{{msg}}</span>
+        <!--<input type="button" value="按钮">-->
+        <bbb @child-msg="get"></bbb>
+    </template>
+    <template id="bbb">
+        <h3>子组件</h3>
+        <input type="button" value="send" @click="send">
+    </template>
+    <script>
+        var vm=new Vue({
+            el:"#box",
+            data:{
+                a:'bbb'
+            },
+            components:{
+                "aaa":{
+                    data(){
+                        return {
+                            msg:111,
+                            msg2:"我是父组件的数据"
+                        }
+                    },
+                    template:'#aaa',
+                    methods:{
+                        get(msg){
+                            this.msg=msg;
+                        }
+                    },
+                    components:{
+                        "bbb":{
+                            data(){
+                                return{
+                                    a:"我是子组件的数据"
+                                }
+                            },
+                            methods:{
+                              send(){
+                                  this.$emit("child-msg",this.a);
+                              }
+                            },
+                            template:'#bbb'
+                        }
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

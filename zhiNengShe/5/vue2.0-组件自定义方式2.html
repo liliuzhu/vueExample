@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <script>
+       var Home={//这是2.0参数
+           template:"#aaa"
+       };
+        window.onload=function(){
+            new Vue({
+                el:"#box",
+                data:{
+                    msg:"welcome Vue2.0"
+                },
+                components:{
+                    "aaa":Home
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<template id="aaa">
+   <div>
+       <h4>这是组件</h4>
+       <strong>加粗</strong>
+   </div>
+</template>
+    <div id="box">
+        <aaa></aaa>
+        {{msg}}
+    </div>
+</body>
+</html>

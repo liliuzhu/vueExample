@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <!--<script src="vue-resource.js"></script>-->
+    <script src="../vue-resource-v1.3.3.js"></script>
+    <style>
+        .gray{
+            background-color: gray;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var vm=new Vue({
+                el:"#box",
+                data:{
+                    myData:[],
+                    t1:"",
+                    now:-1
+                },
+                methods:{
+                    get:function(e){
+                        if(e.keyCode==38||e.keyCode==40) return;
+                        if(e.keyCode==13){
+                            window.open("https://www.baidu.com/s?wd="+this.t1);
+                            this.t1="";
+                        }
+                        this.now=-1;
+                        this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                                {
+                                    params:{wd:this.t1},
+                                    jsonp : "cb"
+                                }
+                        ).then(function(res){
+                            console.log(res);
+                            this.myData=res.data.s;
+                        },function(err){
+                            console.log(err);
+                        });
+                    },
+                    changeDown:function(){
+                        this.now++;
+                        if(this.now==this.myData.length){
+                            this.now=-1;
+                        }
+                        this.t1=this.myData[this.now];
+                    },
+                    changeUp:function(){
+                        this.now--;
+                        if(this.now<-1){
+                            this.now=this.myData.length;
+                        }
+                        this.t1=this.myData[this.now];
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="t1"@keyup="get($event)" @keydown.down="changeDown()" @keydown.up.prevent="changeUp()">
+    <ul>
+        <li v-for="(item,index) in myData" :class="{gray:index==now}">{{item}}</li>
+    </ul>
+    <p v-if="myData.length==0">暂无数据。。。</p>
+</div>
+</body>
+</html>

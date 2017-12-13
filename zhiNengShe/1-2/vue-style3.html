@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <style>
+        .red_color{
+            color:red;
+        }
+        .bg_blue{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var vm=new Vue({
+                el:"#box",
+                data:{
+                    json:{
+                        color:"red",lineHeight:"30px","background-color":"blue"
+
+                    }
+                },
+                methods:{
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <strong :style="json">文字。。。</strong>
+</div>
+</body>
+</html>

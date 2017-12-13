@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <style>
+        .red_color{
+            color:red;
+        }
+        .bg_blue{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var vm=new Vue({
+                el:"#box",
+                data:{
+
+                },
+                filters: {
+                    capitalize: function (value) {
+                        if (!value) return '';
+                        value = value.toString();
+                        return value.charAt(0).toUpperCase() + value.slice(1);
+                    },
+                    uppercase:function(value){
+                        return value.toUpperCase()
+                    },
+                    lowercase:function(value){
+                        return value.toLowerCase()
+                    }
+                },
+                methods:{
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    {{'welcome'|uppercase|lowercase|capitalize}}
+</div>
+</body>
+</html>

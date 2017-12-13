@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    font-size: 100%;
+    line-height: 1;
+    font-weight: 200;
+    color: #333;
+    font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+}
+.clearfix{
+    display: inline-block;
+    &:after{
+        content: '';
+        display: block;
+        height: 0;
+        line-height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+.forDpr( @dpr:1) when (isnumber(@dpr)) and ( @dpr >0 ) and ( @dpr >=1 ) and ( @dpr <= 3 ){
+    @media (-webkit-min-device-pixel-ratio: @dpr),(min-device-pixel-ratio: @dpr) {
+        .border-bottom::after,.border-top::before{
+            -webkit-transform: scaleY(1/@dpr);
+            -moz-transform: scaleY(1/@dpr);
+            -ms-transform: scaleY(1/@dpr);
+            -o-transform: scaleY(1/@dpr);
+            transform: scaleY(1/@dpr);
+        }
+    }
+    .forDpr(@dpr + 0.5);
+}
+.forDpr(1);

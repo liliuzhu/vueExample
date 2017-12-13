@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <script>
+        window.onload=function(){
+            var vm=new Vue({
+                el:"#box",
+                data:{
+                    msg:"welcome vue"
+                },
+                methods:{
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        {{msg}}
+    </div>
+</body>
+</html>

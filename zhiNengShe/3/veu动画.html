@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            height: 100px;
+            width: 100px;
+            background:red;
+        }
+        .fade-transition{
+            transition: 1s all ease;
+        }
+        .fade-enter{
+            opacity: 0;
+        }
+        .fade-leave{
+            opacity: 0;
+            transform: translate(200px);
+        }
+    </style>
+    <script src="./bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="按钮" @click="toggle">
+        <div id="div1" v-show="bSing" transition="fade"></div>
+    </div>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                bSing:true
+            },
+            methods:{
+                toggle:function(){
+                   this.bSing=!this.bSing;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-v2.3.2.js"></script>
+    <script>
+        Vue.component("my-aaa", {
+                    template:"<h4>这是组件</h4>" +
+                    "<strong>加粗</strong>"
+                });
+        window.onload=function(){
+            new Vue({
+                el:"#box",
+                data:{
+                    msg:"welcome Vue2.0"
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        {{msg}}
+        <my-aaa></my-aaa>
+    </div>
+</body>
+</html>

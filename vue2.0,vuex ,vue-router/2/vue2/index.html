@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>vue2</title>
+    <style>
+      .router-link-exact-active{
+        color: #f0f;
+      }
+      .fade1-enter-active, .fade1-leave-active {
+        transition: opacity .5s
+      }
+      .fade1-enter, .fade1-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+        opacity: 0
+      }
+      .fade2-enter-active, .fade2-leave-active {
+        transition: background 1s;
+      }
+      .fade2-enter, .fade2-leave-to {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="demo"></div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>

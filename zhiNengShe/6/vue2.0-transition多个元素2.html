@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+        p{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin: 10px auto;
+        }
+    </style>
+    <script src="../vue-v2.0.3.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:"#box",
+                data:{
+                    show:"",
+                    list:["apple","banana","orange","pear"]
+                },
+                computed:{
+                    lists:function(){
+                        return this.list.filter(function(val){
+                            return val.indexOf(this.show)!=-1;
+                        }.bind(this));
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="show">
+    <transition-group enter-active-class="zoomInLeft"
+                     leave-active-class="zoomOutRight"
+    >
+        <p v-show="show" v-for="(val,index) in lists" class="animated" :key="index">{{val}}</p>
+    </transition-group>
+</div>
+</body>
+</html>

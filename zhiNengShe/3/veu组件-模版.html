@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <my-aaa></my-aaa>
+    </div>
+    <script type="x-template" id="aaa">
+        <strong @click="change">{{msg}}</strong>
+        <ul>
+            <li>1111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </script>
+    <script>
+        var vm=new Vue({
+            el:"#box",
+            components:{
+                'my-aaa':{
+                    data(){
+                        return{
+                            msg:"welconme vue"
+                        }
+                    },
+                    methods:{
+                      change(){
+                          this.msg="change";
+                      }
+                    },
+                    template:'#aaa'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

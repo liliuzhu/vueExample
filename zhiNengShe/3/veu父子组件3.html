@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+    <template id="aaa">
+        <h1>1111-->{{msg2}}</h1>
+        <bbb :mmm="msg2"></bbb>
+    </template>
+    <script>
+        var vm=new Vue({
+            el:"#box",
+            data:{
+                a:'bbb'
+            },
+            components:{
+                "aaa":{
+                    data(){
+                        return {
+                            msg2:"我是父组件的数据"
+                        }
+                    },
+                    template:'#aaa',
+                    components:{
+                        "bbb":{
+                            props:["mmm"],
+                            template:'<h3>我是bbb组件-{{mmm}}</h3>'
+                        }
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
