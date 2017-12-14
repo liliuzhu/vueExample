@@ -14,7 +14,7 @@
             <section>
                 <dl v-for="item in goods" class="food-list food-list-hook">
                     <dt class="title">{{item.name}}</dt>
-                    <dd @click="selectFood(food,$event)" v-for="food in item.foods" class="foot-item border-bottom">
+                    <dd @click="selectFood(food,$event)" v-for="food in item.foods" class="food-item border-bottom">
                         <div class="icon">
                             <img :src="food.icon" alt="">
                         </div>
@@ -61,7 +61,7 @@
             this.CART_MAP = getLocalCartMAp(this.seller.id);
         },
         mounted() {
-            this.getInfo();
+            this.getGoodsInfo();
         },
         components: {
             shopcart,
@@ -108,30 +108,44 @@
                 this.selectedFood = food;
                 this.$refs.food.show();
             },
-            getInfo() {
-                this.$ajax.get('/api/shop/goods').then((res) => {
-                    if (res.data.status) {
-                        this.goods = res.data.body;
-                        /*
-                        * 读取缓存
-                        * */
-                        this.goods.forEach((good) => {
-                            good.foods.forEach((food) => {
-                                let selectFood = this.CART_MAP;
-                                selectFood.forEach((select) => {
-                                    if (food.id === select.id) {
-                                        Vue.set(food, 'count', select.count);
-                                    }
-                                });
-                            });
+            getGoodsInfo() {
+                if (this.custom.hasServe) {
+                    this.$ajax.get('/api/shop/goods').then((res) => {
+                        if (res.data.status) {
+                            this.goods = res.data.body;
+                            this.handleData();
+                        }
+                    }).catch((err) => {
+                        console.log('goods 错误' + err);
+                    });
+                } else {
+                    this.$ajax.get('./data.json').then((res) => {
+                        if (res.data.goods) {
+                            this.goods = res.data.goods;
+                            this.handleData();
+                        }
+                    }).catch((err) => {
+                        console.log('goods 读取json错误' + err);
+                    });
+                }
+            },
+            handleData() {
+                /*
+                 * 读取缓存
+                 * */
+                this.goods.forEach((good) => {
+                    good.foods.forEach((food) => {
+                        let selectFood = this.CART_MAP;
+                        selectFood.forEach((select) => {
+                            if (food.id === select.id) {
+                                Vue.set(food, 'count', select.count);
+                            }
                         });
-                        this.$nextTick(() => {
-                            this._initScroll();
-                            this._calculateHeight();
-                        });
-                    }
-                }).catch((err) => {
-                    console.log('goods 错误' + err);
+                    });
+                });
+                this.$nextTick(() => {
+                    this._initScroll();
+                    this._calculateHeight();
                 });
             },
             selectMenu(index, event) {
@@ -244,7 +258,7 @@
                 background-color: #f3f5f7;
                 border-left: 1px solid #d9dde1;
             }
-            .foot-item {
+            .food-item {
                 display: flex;
                 padding: 10px;
                 /*margin: 0 10px;*/

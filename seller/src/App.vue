@@ -35,27 +35,28 @@
             'el-header': Header
         },
         mounted() {
-            this.getInfo();
+            this.getSellerInfo();
         },
         methods: {
-            getInfo() {
-                this.$ajax.get('/api/shop/seller?id=' + this.seller.id).then((res) => {
-                    if (res.data.status) {
-                        this.seller = {...res.data.body, ...this.seller};
-                        // console.log(res.data.body);
-                    }
-                }).catch((err) => {
-                    console.log('seller错误' + err);
-                });
-                // this.$ajax.get('./data.json?id=' + this.seller.id).then((res) => {
-                //     console.log(res);
-                //     if (res.data.seller) {
-                //         this.seller = {...res.data.seller, ...this.seller};
-                //         // console.log(res.data.body);
-                //     }
-                // }).catch((err) => {
-                //     console.log('seller错误' + err);
-                // });
+            getSellerInfo() {
+                if (this.custom.hasServe) {
+                    this.$ajax.get('/api/shop/seller?id=' + this.seller.id).then((res) => {
+                        if (res.data.status) {
+                            this.seller = {...res.data.body, ...this.seller};
+                            // console.log(res.data.body);
+                        }
+                    }).catch((err) => {
+                        console.log('seller错误' + err);
+                    });
+                } else {
+                    this.$ajax.get('./data.json?id=' + this.seller.id).then((res) => {
+                        if (res.data.seller) {
+                            this.seller = {...res.data.seller, ...this.seller};
+                        }
+                    }).catch((err) => {
+                        console.log('seller json 错误' + err);
+                    });
+                }
             }
         },
         watch: {

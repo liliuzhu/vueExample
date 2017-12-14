@@ -33,7 +33,8 @@
                           :ratings="ratings"></ratingselect>
             <div class="rating-wrapper">
                 <ul>
-                    <li v-for="rating in ratings" class="rating-item border-bottom" v-show="needShow(rating.rateType,rating.text)">
+                    <li v-for="rating in ratings" class="rating-item border-bottom"
+                        v-show="needShow(rating.rateType,rating.text)">
                         <div class="avatar">
                             <img :src="rating.avatar" alt="头像">
                         </div>
@@ -85,22 +86,37 @@
         },
 
         mounted() {
-            this.getInfo();
+            this.getRatingsInfo();
         },
         methods: {
-            getInfo() {
-                this.$ajax.get('/api/shop/ratings').then((res) => {
-                    if (res.data.status) {
-                        this.ratings = res.data.body;
-                        this.$nextTick(() => {
-                            this.scroll = new BScroll(this.$refs.ratings, {
-                                click: true
+            getRatingsInfo() {
+                if (this.custom.hasServe) {
+                    this.$ajax.get('/api/shop/ratings').then((res) => {
+                        if (res.data.status) {
+                            this.ratings = res.data.body;
+                            this.$nextTick(() => {
+                                this.scroll = new BScroll(this.$refs.ratings, {
+                                    click: true
+                                });
                             });
-                        });
-                    }
-                }).catch((err) => {
-                    console.log('ratings 错误' + err);
-                });
+                        }
+                    }).catch((err) => {
+                        console.log('ratings 错误' + err);
+                    });
+                } else {
+                    this.$ajax.get('./data.json').then((res) => {
+                        if (res.data.ratings) {
+                            this.ratings = res.data.ratings;
+                            this.$nextTick(() => {
+                                this.scroll = new BScroll(this.$refs.ratings, {
+                                    click: true
+                                });
+                            });
+                        }
+                    }).catch((err) => {
+                        console.log('ratings json 错误' + err);
+                    });
+                }
             },
             changeFilter() {
                 this.$nextTick(() => {
@@ -217,77 +233,76 @@
         }
         .rating-wrapper {
             padding: 0 18px;
-            .rating-item{
+            .rating-item {
                 display: flex;
                 margin: 18px 0;
                 .border-bottom();
             }
-            .avatar{
+            .avatar {
                 flex: 0 0 28px;
                 width: 28px;
-                img{
+                img {
                     width: 28px;
                     height: 28px;
                     border-radius: 50%;
                 }
             }
-            .content{
+            .content {
                 position: relative;
                 padding-left: 12px;
                 flex: 1;
-                .name{
+                .name {
                     line-height: 12px;
                     margin-bottom: 4px;
                     font-size: 10px;
-                    color: rgb(7,17,27);
+                    color: rgb(7, 17, 27);
                 }
-                .star-wrapper{
+                .star-wrapper {
                     margin-bottom: 6px;
                     font-size: 0;
-                    .star,.delivery{
+                    .star, .delivery {
                         margin-right: 6px;
                         display: inline-block;
                         vertical-align: top;
                     }
-                    .delivery{
-                        color: rgb(147,153,159);
+                    .delivery {
+                        color: rgb(147, 153, 159);
                         line-height: 12px;
                         font-size: 10px;
                     }
                 }
-                .text{
+                .text {
                     line-height: 18px;
                     font-size: 12px;
                     margin-bottom: 8px;
-                    color: rgb(7,17,27);
-
+                    color: rgb(7, 17, 27);
 
                 }
-                .recommend{
+                .recommend {
                     line-height: 16px;
                     font-size: 0;
-                    .icon-thumb_up,.item{
+                    .icon-thumb_up, .item {
                         margin: 0 8px 4px 0;
                         display: inline-block;
                         font-size: 9px;
                     }
-                    .icon-thumb_up{
-                        color: rgb(0,160,220);
+                    .icon-thumb_up {
+                        color: rgb(0, 160, 220);
                     }
-                    .item{
+                    .item {
                         padding: 0 6px;
-                        border: 1px solid rgba(7,17,27,.1);
-                        border-radius:1px;
-                        color: rgb(147,153,159);
+                        border: 1px solid rgba(7, 17, 27, .1);
+                        border-radius: 1px;
+                        color: rgb(147, 153, 159);
                         background: #fff;
                     }
                 }
-                .time{
+                .time {
                     position: absolute;
                     top: 0;
                     right: 0;
                     line-height: 12px;
-                    color: rgb(147,153,159);
+                    color: rgb(147, 153, 159);
                     font-size: 10px;
                 }
             }

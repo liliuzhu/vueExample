@@ -11,8 +11,13 @@ Object.keys(filters).forEach((key) => {
     Vue.filter(key, filters[key]);
 });
 Vue.config.productionTip = false;
+/*
+* 自定义全局属性---是否有服务器
+* */
+Vue.prototype.custom = {
+    hasServe: false
+};
 Vue.prototype.$ajax = axios;
-
 /* eslint-disable no-new */
 /* eslint-disable no-unused-vars */
 var vm = new Vue({
