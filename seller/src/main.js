@@ -7,6 +7,7 @@ import App from './App';
 import filters from './filters/index';
 import 'common/style/index.less';
 
+console.log('该案例仅用于学习，如有侵权请联系我，立刻删除');
 Object.keys(filters).forEach((key) => {
     Vue.filter(key, filters[key]);
 });
