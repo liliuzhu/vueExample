@@ -1,0 +1,567 @@
+{
+    "items": [
+        {
+            "food": {
+                "activities": [
+                    {
+                        "attribute": "{\"79\": {\"1\": 30.0, \"0\": 0}, \"39\": {\"1\": 20.0, \"0\": 0}}",
+                        "description": "满39减20",
+                        "icon_color": "f07373",
+                        "icon_name": "减",
+                        "id": 262579650,
+                        "is_exclusive_with_food_activity": false,
+                        "name": "邻活生鲜满减活动",
+                        "tips": "满39减20",
+                        "type": 102
+                    }
+                ],
+                "cart_link": "eleme://retail_store?re_food_id=739706545\u0026cart_operations=%7B%22add_foods%22%3A%20%5B%7B%22specs%22%3A%20%5B%5D%2C%20%22id%22%3A%20739706545%2C%20%22quantity%22%3A%201%7D%5D%7D\u0026auto_expand_cart_view=1\u0026animation_type=1\u0026re_store_id=157762016\u0026re_group_id=1231526980",
+                "category_id": 1231526980,
+                "discount_activity": "满39减20",
+                "food_id": 739706545,
+                "food_rate": "11人好评",
+                "id": 739706545,
+                "image_path": "f8c41712024777a9231a40de3101c850jpeg",
+                "is_new": false,
+                "month_sales": 59,
+                "name": "鲜切云南冰糖麒麟西瓜1份",
+                "packing_fee": 0,
+                "price": 19.9,
+                "restaurant_id": 157762016,
+                "restaurant_name": "邻活生鲜水果超市（王府井店）",
+                "satisfy_count": 11,
+                "satisfy_rate": 100,
+                "scheme": "eleme://retail_store?re_store_id=157762016\u0026re_group_id=1231526980\u0026re_food_id=739706545",
+                "sku_id": "357819501717",
+                "stock": 9930
+            },
+            "restaurant": {
+                "address": "北京市东城区南河沿大街15号",
+                "authentic_id": 8322163323783916,
+                "delivery_mode": {
+                    "border": "",
+                    "color": "2395FF",
+                    "gradient": {
+                        "rgb_from": "00AAFF",
+                        "rgb_to": "0085FF"
+                    },
+                    "id": 1,
+                    "is_solid": true,
+                    "text": "蜂鸟专送",
+                    "text_color": "FFFFFF"
+                },
+                "description": "",
+                "distance": 1405,
+                "favored": false,
+                "float_delivery_fee": 10,
+                "float_minimum_order_amount": 20,
+                "id": 157762016,
+                "image_path": "0e7d431c004b29398d730ef5adce1496png",
+                "is_new": false,
+                "is_premium": false,
+                "is_stock_empty": 0,
+                "is_valid": 1,
+                "latitude": 39.913707,
+                "longitude": 116.406543,
+                "max_applied_quantity_per_order": -1,
+                "name": "邻活生鲜水果超市（王府井店）",
+                "next_business_time": "07:30",
+                "only_use_poi": false,
+                "opening_hours": [
+                    "07:30/01:50"
+                ],
+                "order_lead_time": 33,
+                "phone": "13522699952 13901322983",
+                "piecewise_agent_fee": {
+                    "description": "配送费¥10",
+                    "extra_fee": 4,
+                    "is_extra": true,
+                    "rules": [
+                        {
+                            "fee": 10,
+                            "price": 20
+                        }
+                    ],
+                    "tips": "配送费¥10"
+                },
+                "promotion_info": "圣诞大促，水果39减20，满49元再送平安果定制礼盒，新鲜生活，上邻活～   \n活动时间【12.24-12.26】",
+                "rating": 4.5,
+                "rating_count": 0,
+                "recent_order_num": 530,
+                "recommend": {
+                    "is_ad": false,
+                    "reason": ""
+                },
+                "regular_customer_count": 0,
+                "scheme": "eleme://retail_store?re_store_id=157762016",
+                "status": 1,
+                "supports": [
+                    {
+                        "description": "该商家支持开发票，开票订单金额100元起，请在下单时填写好发票抬头",
+                        "icon_color": "999999",
+                        "icon_name": "票",
+                        "id": 4,
+                        "name": "开发票"
+                    }
+                ],
+                "type": 1
+            }
+        },
+        {
+            "food": {
+                "activities": [
+                    {
+                        "attribute": "{\"25\": {\"1\": 15.0, \"0\": 0}, \"50\": {\"1\": 20.0, \"0\": 0}, \"38\": {\"1\": 18.0, \"0\": 0}}",
+                        "description": "满25减15",
+                        "icon_color": "f07373",
+                        "icon_name": "减",
+                        "id": 237235090,
+                        "is_exclusive_with_food_activity": true,
+                        "name": "满减",
+                        "tips": "满25减15",
+                        "type": 102
+                    }
+                ],
+                "cart_link": "eleme://restaurant?restaurant_id=155137031\u0026cart_operations=%7B%22add_foods%22%3A%20%5B%7B%22specs%22%3A%20%5B%5D%2C%20%22id%22%3A%20613244741%2C%20%22quantity%22%3A%201%7D%5D%7D\u0026target_food_id=613244741\u0026auto_expand_cart_view=1\u0026animation_type=1\u0026category_id=514673792\u0026type=0",
+                "category_id": 514673792,
+                "discount_activity": "满25减15",
+                "food_id": 613244741,
+                "food_rate": "18人好评",
+                "id": 613244741,
+                "image_path": "74437dddf697067d80af0526052d1ba5jpeg",
+                "is_new": false,
+                "month_sales": 118,
+                "name": "超级邪恶香辣劲脆堡（双层）",
+                "packing_fee": 0.5,
+                "price": 19.99,
+                "restaurant_id": 155137031,
+                "restaurant_name": "美乐滋炸鸡汉堡",
+                "satisfy_count": 18,
+                "satisfy_rate": 90,
+                "scheme": "eleme://catering?target_food_id=613244741\u0026restaurant_id=155137031\u0026category_id=514673792",
+                "sku_id": "228322614762",
+                "stock": 8236
+            },
+            "restaurant": {
+                "address": "北京市东城区灯市口大街25号",
+                "authentic_id": 8382103311424931,
+                "description": "时代随变，唯有经典不变！！用心做事！良心做餐！您的满意，是我们最大的回报！",
+                "distance": 2435,
+                "favored": false,
+                "float_delivery_fee": 0,
+                "float_minimum_order_amount": 0,
+                "id": 155137031,
+                "image_path": "29ceba18774902b6b052efbc421baa22jpeg",
+                "is_new": false,
+                "is_premium": false,
+                "is_stock_empty": 0,
+                "is_valid": 1,
+                "latitude": 39.918143,
+                "longitude": 116.417588,
+                "max_applied_quantity_per_order": -1,
+                "name": "美乐滋炸鸡汉堡",
+                "next_business_time": "10:00",
+                "only_use_poi": false,
+                "opening_hours": [
+                    "10:00/02:00"
+                ],
+                "order_lead_time": 31,
+                "phone": "13520041911",
+                "piecewise_agent_fee": {
+                    "description": "免配送费",
+                    "extra_fee": 0,
+                    "is_extra": false,
+                    "rules": [
+                        {
+                            "fee": 0,
+                            "price": 0
+                        }
+                    ],
+                    "tips": "免配送费"
+                },
+                "promotion_info": "优惠多多！欢乐多多！欢迎您的再次光临！！！",
+                "rating": 4.1,
+                "rating_count": 0,
+                "recent_order_num": 448,
+                "recommend": {
+                    "is_ad": false,
+                    "reason": ""
+                },
+                "regular_customer_count": 0,
+                "scheme": "eleme://catering?restaurant_id=155137031",
+                "status": 1,
+                "supports": [],
+                "type": 0
+            }
+        },
+        {
+            "food": {
+                "activities": [
+                    {
+                        "attribute": "{\"200\": {\"1\": 100.0, \"0\": 0.0}, \"100\": {\"1\": 50.0, \"0\": 0.0}, \"60\": {\"1\": 30.0, \"0\": 0.0}}",
+                        "description": "满60减30",
+                        "icon_color": "f07373",
+                        "icon_name": "减",
+                        "id": 215241586,
+                        "is_exclusive_with_food_activity": false,
+                        "name": "好吃不贵。",
+                        "tips": "满60减30",
+                        "type": 102
+                    }
+                ],
+                "cart_link": "eleme://restaurant?restaurant_id=154263655\u0026cart_operations=%7B%22add_foods%22%3A%20%5B%7B%22specs%22%3A%20%5B%5D%2C%20%22id%22%3A%201286421728%2C%20%22quantity%22%3A%201%7D%5D%7D\u0026target_food_id=1286421728\u0026auto_expand_cart_view=1\u0026animation_type=1\u0026category_id=1231758725\u0026type=0",
+                "category_id": 1231758725,
+                "discount_activity": "满60减30",
+                "food_id": 1286421728,
+                "food_rate": "13人好评",
+                "id": 1286421728,
+                "image_path": "333c851c65a787445b882047562a73b4jpeg",
+                "is_new": false,
+                "month_sales": 120,
+                "name": "羊肉串（5串）",
+                "packing_fee": 0,
+                "price": 15,
+                "restaurant_id": 154263655,
+                "restaurant_name": "葱店大姐烤串",
+                "satisfy_count": 13,
+                "satisfy_rate": 100,
+                "scheme": "eleme://catering?target_food_id=1286421728\u0026restaurant_id=154263655\u0026category_id=1231758725",
+                "sku_id": "200000088495850263",
+                "stock": 9501
+            },
+            "restaurant": {
+                "address": "北京市东城区广渠门内大街90-8号地下一层西半侧",
+                "authentic_id": 8382113315465155,
+                "description": "",
+                "distance": 2599,
+                "favored": false,
+                "float_delivery_fee": 0,
+                "float_minimum_order_amount": 20,
+                "id": 154263655,
+                "image_path": "50e1dc21ace82c1b98d0450044f9cf4fjpeg",
+                "is_new": false,
+                "is_premium": false,
+                "is_stock_empty": 0,
+                "is_valid": 1,
+                "latitude": 39.892897,
+                "longitude": 116.422585,
+                "max_applied_quantity_per_order": -1,
+                "name": "葱店大姐烤串",
+                "next_business_time": "16:30",
+                "only_use_poi": false,
+                "opening_hours": [
+                    "16:30/00:30"
+                ],
+                "order_lead_time": 31,
+                "phone": "13683618505",
+                "piecewise_agent_fee": {
+                    "description": "免配送费",
+                    "extra_fee": 0,
+                    "is_extra": false,
+                    "rules": [
+                        {
+                            "fee": 0,
+                            "price": 20
+                        }
+                    ],
+                    "tips": "免配送费"
+                },
+                "promotion_info": "",
+                "rating": 4.5,
+                "rating_count": 0,
+                "recent_order_num": 125,
+                "recommend": {
+                    "is_ad": false,
+                    "reason": ""
+                },
+                "regular_customer_count": 0,
+                "scheme": "eleme://catering?restaurant_id=154263655",
+                "status": 1,
+                "supports": [],
+                "type": 0
+            }
+        },
+        {
+            "food": {
+                "activities": [
+                    {
+                        "background": {
+                            "rgb_from": "FF822D",
+                            "rgb_to": "FF2A00"
+                        },
+                        "description": "5折",
+                        "icon_color": "F07373",
+                        "icon_name": "折",
+                        "id": 0,
+                        "name": "立减优惠",
+                        "tips": "5折"
+                    }
+                ],
+                "cart_link": "eleme://restaurant?restaurant_id=160239580\u0026cart_operations=%7B%22add_foods%22%3A%20%5B%7B%22specs%22%3A%20%5B%5D%2C%20%22id%22%3A%20735030415%2C%20%22quantity%22%3A%201%7D%5D%7D\u0026target_food_id=735030415\u0026auto_expand_cart_view=1\u0026animation_type=1\u0026category_id=530531522\u0026type=0",
+                "category_id": 530531522,
+                "discount_activity": "",
+                "discount_rate": 0.5,
+                "food_id": 735030415,
+                "food_rate": "30人好评",
+                "icon_name": "特",
+                "id": 735030415,
+                "image_path": "e366f8891e1448b078385c449c84c23cjpeg",
+                "is_new": false,
+                "month_sales": 171,
+                "name": "羊肉串10串",
+                "original_price": 28.9,
+                "packing_fee": 1,
+                "price": 14.45,
+                "restaurant_id": 160239580,
+                "restaurant_name": "望京小腰（朝内店）",
+                "satisfy_count": 30,
+                "satisfy_rate": 93,
+                "scheme": "eleme://catering?target_food_id=735030415\u0026restaurant_id=160239580\u0026category_id=530531522",
+                "sku_id": "353031145280",
+                "stock": 9772
+            },
+            "restaurant": {
+                "address": "北京市东城区朝阳门内大街197号",
+                "authentic_id": 6352153304582580,
+                "description": "",
+                "distance": 3392,
+                "favored": false,
+                "float_delivery_fee": 0,
+                "float_minimum_order_amount": 20,
+                "id": 160239580,
+                "image_path": "d9297f07907bbe1ae5b986fa18834300jpeg",
+                "is_new": false,
+                "is_premium": false,
+                "is_stock_empty": 0,
+                "is_valid": 1,
+                "latitude": 39.924569,
+                "longitude": 116.42344,
+                "max_applied_quantity_per_order": -1,
+                "name": "望京小腰（朝内店）",
+                "next_business_time": "17:00",
+                "only_use_poi": false,
+                "opening_hours": [
+                    "17:00/03:00"
+                ],
+                "order_lead_time": 38,
+                "phone": "13810673389 17316229889",
+                "piecewise_agent_fee": {
+                    "description": "免配送费",
+                    "extra_fee": 0,
+                    "is_extra": false,
+                    "rules": [
+                        {
+                            "fee": 0,
+                            "price": 20
+                        }
+                    ],
+                    "tips": "免配送费"
+                },
+                "promotion_info": "未填写欢迎大家光临望京小腰，用餐高峰请提前下单，天冷路滑配送小哥有时会延迟请大家谅解，谢谢",
+                "rating": 4.7,
+                "rating_count": 0,
+                "recent_order_num": 823,
+                "recommend": {
+                    "is_ad": false,
+                    "reason": ""
+                },
+                "regular_customer_count": 0,
+                "scheme": "eleme://catering?restaurant_id=160239580",
+                "status": 1,
+                "supports": [],
+                "type": 0
+            }
+        },
+        {
+            "food": {
+                "activities": [
+                    {
+                        "attribute": "{\"60\": {\"1\": 20.0, \"0\": 0}}",
+                        "description": "满60减20",
+                        "icon_color": "f07373",
+                        "icon_name": "减",
+                        "id": 263111314,
+                        "is_exclusive_with_food_activity": true,
+                        "name": "满减",
+                        "tips": "满60减20",
+                        "type": 102
+                    }
+                ],
+                "cart_link": "eleme://restaurant?restaurant_id=158159505\u0026cart_operations=%7B%22add_foods%22%3A%20%5B%7B%22specs%22%3A%20%5B%5D%2C%20%22id%22%3A%201284452241%2C%20%22quantity%22%3A%201%7D%5D%7D\u0026target_food_id=1284452241\u0026auto_expand_cart_view=1\u0026animation_type=1\u0026category_id=1231553844\u0026type=0",
+                "category_id": 1231553844,
+                "discount_activity": "满60减20",
+                "food_id": 1284452241,
+                "food_rate": "24人好评",
+                "id": 1284452241,
+                "image_path": "de55ff543a657300f50b4fd06e80ec89jpeg",
+                "is_new": false,
+                "month_sales": 173,
+                "name": "窑鸡（香辣）",
+                "packing_fee": 2,
+                "price": 88,
+                "restaurant_id": 158159505,
+                "restaurant_name": "窑鸡王（金宝街店）",
+                "satisfy_count": 24,
+                "satisfy_rate": 100,
+                "scheme": "eleme://catering?target_food_id=1284452241\u0026restaurant_id=158159505\u0026category_id=1231553844",
+                "sku_id": "200000086479095257",
+                "stock": 9612
+            },
+            "restaurant": {
+                "address": "北京市东城区大雅宝胡同25号",
+                "authentic_id": 2322183303417005,
+                "description": "",
+                "distance": 3223,
+                "favored": false,
+                "float_delivery_fee": 0,
+                "float_minimum_order_amount": 0,
+                "id": 158159505,
+                "image_path": "e3bc538a166d73691d1e85a3857c12a2png",
+                "is_new": false,
+                "is_premium": true,
+                "is_stock_empty": 0,
+                "is_valid": 1,
+                "latitude": 39.915768,
+                "longitude": 116.432403,
+                "max_applied_quantity_per_order": -1,
+                "name": "窑鸡王（金宝街店）",
+                "next_business_time": "10:30",
+                "only_use_poi": false,
+                "opening_hours": [
+                    "10:30/05:00"
+                ],
+                "order_lead_time": 39,
+                "phone": "13436663889",
+                "piecewise_agent_fee": {
+                    "description": "免配送费",
+                    "extra_fee": 0,
+                    "is_extra": false,
+                    "rules": [
+                        {
+                            "fee": 0,
+                            "price": 0
+                        }
+                    ],
+                    "tips": "免配送费"
+                },
+                "promotion_info": "1.我们的窑鸡都选用当日宰杀的鲜活走地鸡，通过400度高温窑制而成.2.所有食材中绝不添加味精、色素、防腐剂.3.食用时趁热、手撕，沾汁风味更佳.4.为了您能吃到新鲜出炉、香喷喷的窑鸡，建议您提前45分钟预定。",
+                "rating": 4.6,
+                "rating_count": 0,
+                "recent_order_num": 510,
+                "recommend": {
+                    "is_ad": false,
+                    "reason": ""
+                },
+                "regular_customer_count": 0,
+                "scheme": "eleme://catering?restaurant_id=158159505",
+                "status": 1,
+                "supports": [
+                    {
+                        "description": "该商家支持开发票，请在下单时填写好发票抬头",
+                        "icon_color": "999999",
+                        "icon_name": "票",
+                        "id": 4,
+                        "name": "开发票"
+                    }
+                ],
+                "type": 0
+            }
+        },
+        {
+            "food": {
+                "activities": [
+                    {
+                        "attribute": "{\"138\": {\"1\": 42.0, \"0\": 0.0}, \"59\": {\"1\": 20.0, \"0\": 0.0}, \"100\": {\"1\": 35.0, \"0\": 0.0}}",
+                        "description": "满59减20",
+                        "icon_color": "f07373",
+                        "icon_name": "减",
+                        "id": 263067386,
+                        "is_exclusive_with_food_activity": true,
+                        "name": "过节啦",
+                        "tips": "满59减20",
+                        "type": 102
+                    }
+                ],
+                "cart_link": "eleme://restaurant?restaurant_id=160251008\u0026cart_operations=%7B%22add_foods%22%3A%20%5B%7B%22specs%22%3A%20%5B%5D%2C%20%22id%22%3A%20739177913%2C%20%22quantity%22%3A%201%7D%5D%7D\u0026target_food_id=739177913\u0026auto_expand_cart_view=1\u0026animation_type=1\u0026category_id=530717665\u0026type=0",
+                "category_id": 530717665,
+                "discount_activity": "满59减20",
+                "food_id": 739177913,
+                "food_rate": "31人好评",
+                "id": 739177913,
+                "image_path": "77387d800966fb70f9fd1fe5f0b8afadjpeg",
+                "is_new": true,
+                "month_sales": 110,
+                "name": "纯真羊肉筋（5）",
+                "packing_fee": 0.1,
+                "price": 15,
+                "restaurant_id": 160251008,
+                "restaurant_name": "门小街望京小腰烧烤",
+                "satisfy_count": 31,
+                "satisfy_rate": 100,
+                "scheme": "eleme://catering?target_food_id=739177913\u0026restaurant_id=160251008\u0026category_id=530717665",
+                "sku_id": "357278183317",
+                "stock": 9869
+            },
+            "restaurant": {
+                "address": "北京市东城区朝内南小街53号",
+                "authentic_id": 5372143302489808,
+                "description": "门小街烧烤店是老店新开，力争创新与坚持谢谢",
+                "distance": 3303,
+                "favored": false,
+                "float_delivery_fee": 0,
+                "float_minimum_order_amount": 38,
+                "id": 160251008,
+                "image_path": "46f57c5ab77801365e60346771b85024jpeg",
+                "is_new": false,
+                "is_premium": false,
+                "is_stock_empty": 0,
+                "is_valid": 1,
+                "latitude": 39.922362,
+                "longitude": 116.426071,
+                "max_applied_quantity_per_order": -1,
+                "name": "门小街望京小腰烧烤",
+                "next_business_time": "16:30",
+                "only_use_poi": false,
+                "opening_hours": [
+                    "16:30/04:00"
+                ],
+                "order_lead_time": 27,
+                "phone": "13718237982",
+                "piecewise_agent_fee": {
+                    "description": "免配送费",
+                    "extra_fee": 0,
+                    "is_extra": false,
+                    "rules": [
+                        {
+                            "fee": 0,
+                            "price": 38
+                        }
+                    ],
+                    "tips": "免配送费"
+                },
+                "promotion_info": "新店开业请大力支持",
+                "rating": 4.6,
+                "rating_count": 0,
+                "recent_order_num": 661,
+                "recommend": {
+                    "is_ad": false,
+                    "reason": ""
+                },
+                "regular_customer_count": 0,
+                "scheme": "eleme://catering?restaurant_id=160251008",
+                "status": 1,
+                "supports": [
+                    {
+                        "description": "该商户食品安全已由中国太平洋保险承保，食品安全有保障",
+                        "icon_color": "999999",
+                        "icon_name": "保",
+                        "id": 7,
+                        "name": "食安保"
+                    }
+                ],
+                "type": 0
+            }
+        }
+    ],
+    "rank_id": "604ee385c7364d00a5685f6e4532a670"
+}

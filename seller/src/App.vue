@@ -59,11 +59,6 @@
                 }
             }
         },
-        watch: {
-            $route() {
-                console.log(this.$route.query);
-            }
-        }
     };
 </script>
 
