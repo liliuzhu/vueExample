@@ -41,13 +41,9 @@
                     <path fill="none" fill-rule="evenodd" stroke="#CCC" stroke-linecap="round" stroke-width="3"
                           d="M2.127 2l10.87 10.582L2.291 23.11"></path>
                 </symbol>
-                <symbol viewBox="0 0 18 18" id="shop">
-                    <path fill-rule="evenodd"
-                          d="M15 6.15a1.745 1.745 0 0 1-1.737 1.6h-.074a1.75 1.75 0 0 1-1.63-1.33.5.5 0 0 0-.487-.407h-.39a.495.495 0 0 0-.49.417 1.748 1.748 0 0 1-1.65 1.32H8.47c-.04 0-.052 0-.064-.002a.528.528 0 0 1-.058-.004l-.09-.01A1.748 1.748 0 0 1 6.802 6.41a.5.5 0 0 0-.487-.397h-.39c-.24 0-.44.17-.487.397a1.75 1.75 0 0 1-1.363 1.308L4 7.732a3.84 3.84 0 0 1-.08.01l-.065.005-.06.003H3.74A1.744 1.744 0 0 1 2 6.083V2h13v4.15zm-14.998.1H0a3.314 3.314 0 0 0 3.31 3.32c1.05 0 2.01-.23 2.615-.995.606.765 1.518.994 2.568.994s1.812-.367 2.418-1.132c.607.765 1.717 1.13 2.767 1.13a3.314 3.314 0 0 0 3.31-3.25.49.49 0 0 0 .013-.11V1.435A1.462 1.462 0 0 0 15.57 0H1.418A1.442 1.442 0 0 0 0 1.435v4.773c0 .015 0 .03.002.043zm14 10.75H3c-1.103 0-2-.9-2-2.006v-2.98a1 1 0 1 1 2 0v2.98L14.002 15 14 12a1 1 0 1 1 2 0v2.99c0 1.11-.896 2.01-1.998 2.01z"></path>
-                </symbol>
             </defs>
         </svg>
-        <pageHeader :callback="back" title="发现"></pageHeader>
+        <pageHeader  :callback="back" title="发现"></pageHeader>
         <!--parts活动-->
         <section class="parts">
             <div v-for="part in parts" class="entry"
@@ -84,7 +80,7 @@
             <!--</section>-->
         </router-link>
         <!--限时好礼-->
-        <section v-if="!crayfish.activities.gift.isHide">
+        <section v-if="!crayfish.activities.gift.isHide" @touchend="$router.push('/exchange');">
             <div class="activity-header">
                 <span class="line left"></span>
                 <svg class="activity-icon">
@@ -94,9 +90,8 @@
                 <span class="line right"></span>
                 <p class="activity-sub-title">{{crayfish.activities.gift.sub_title}}</p>
             </div>
-
             <div class="activity-body">
-                <a v-for="item in suggest" :href="item.url" class="discover-food">
+                <a v-for="item in suggest" @touchend.stop.proevent="function(){}" :href="item.url" class="discover-food">
                     <img
                         :src="analysismageHash(item.image_hash)">
                     <div>
@@ -188,6 +183,7 @@
             }
         },
         mounted() {
+            document.title = '发现';
             this.getDiscover();
         },
         watch: {

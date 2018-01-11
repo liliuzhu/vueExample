@@ -1,36 +1,43 @@
 <template>
     <div class="recommendList">
-        <div class="recommend_wrap">
-            <section v-for="recommend in recommends" class="recommend_item">
-                <img class="recommend_img" :src="analysismageHash(recommend.food.image_path,true,345)">
-                <div class="recommend_food">
-                    <h4 class="food_name">{{recommend.food.name}}</h4>
-                    <div class="food_sell">月售{{recommend.food.month_sales}}份　好评率{{recommend.food.satisfy_rate}}%
-                    </div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             style="position:absolute;width:0;height:0">
+            <defs>
+                <symbol viewBox="0 0 18 18" id="shop">
+                    <path fill-rule="evenodd"
+                          d="M15 6.15a1.745 1.745 0 0 1-1.737 1.6h-.074a1.75 1.75 0 0 1-1.63-1.33.5.5 0 0 0-.487-.407h-.39a.495.495 0 0 0-.49.417 1.748 1.748 0 0 1-1.65 1.32H8.47c-.04 0-.052 0-.064-.002a.528.528 0 0 1-.058-.004l-.09-.01A1.748 1.748 0 0 1 6.802 6.41a.5.5 0 0 0-.487-.397h-.39c-.24 0-.44.17-.487.397a1.75 1.75 0 0 1-1.363 1.308L4 7.732a3.84 3.84 0 0 1-.08.01l-.065.005-.06.003H3.74A1.744 1.744 0 0 1 2 6.083V2h13v4.15zm-14.998.1H0a3.314 3.314 0 0 0 3.31 3.32c1.05 0 2.01-.23 2.615-.995.606.765 1.518.994 2.568.994s1.812-.367 2.418-1.132c.607.765 1.717 1.13 2.767 1.13a3.314 3.314 0 0 0 3.31-3.25.49.49 0 0 0 .013-.11V1.435A1.462 1.462 0 0 0 15.57 0H1.418A1.442 1.442 0 0 0 0 1.435v4.773c0 .015 0 .03.002.043zm14 10.75H3c-1.103 0-2-.9-2-2.006v-2.98a1 1 0 1 1 2 0v2.98L14.002 15 14 12a1 1 0 1 1 2 0v2.99c0 1.11-.896 2.01-1.998 2.01z"></path>
+                </symbol>
+            </defs>
+        </svg>
+        <section v-if="recommend.food" v-for="(recommend,index) in recommends" :sort_index="index" class="recommend_item">
+            <img class="recommend_img" :src="analysismageHash(recommend.food.image_path,true,345)">
+            <div class="recommend_food">
+                <h4 class="food_name">{{recommend.food.name}}</h4>
+                <div class="food_sell">月售{{recommend.food.month_sales}}份　好评率{{recommend.food.satisfy_rate}}%
                 </div>
-                <div class="food_detail">
-                    <div class="food_price">
+            </div>
+            <div class="food_detail">
+                <div class="food_price">
                             <span class="price_now">
                                 <i>¥</i><span>{{recommend.food.price}}</span>
                             </span>
-                        <del v-if="recommend.food.original_price" class="price_old">
-                            <i>¥</i><span>{{recommend.food.original_price}}</span>
-                        </del>
-                    </div>
-                    <div v-if="recommend.food.discount_activity" class="support">
-                        <span>{{recommend.food.discount_activity}}</span>
-                    </div>
+                    <del v-if="recommend.food.original_price" class="price_old">
+                        <i>¥</i><span>{{recommend.food.original_price}}</span>
+                    </del>
                 </div>
-                <div class="recommend_shop">
-                    <div class="shop_name">
-                        <svg>
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shop"></use>
-                        </svg>
-                        <span>{{recommend.food.restaurant_name}}</span>
-                    </div>
+                <div v-if="recommend.food.discount_activity" class="support">
+                    <span>{{recommend.food.discount_activity}}</span>
                 </div>
-            </section>
-        </div>
+            </div>
+            <div class="recommend_shop">
+                <div class="shop_name">
+                    <svg>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shop"></use>
+                    </svg>
+                    <span>{{recommend.food.restaurant_name}}</span>
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 <script type="text/ecmascript-6">
@@ -54,7 +61,7 @@
     };
 </script>
 <style rel="stylesheet/css" type="text/css" lang="less" scoped>
-    .recommendList .recommend_wrap {
+    .recommendList {
         padding-bottom: .4rem;
         padding-bottom: 4vw;
         padding-left: .133333rem;

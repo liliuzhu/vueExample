@@ -1,0 +1,227 @@
+{
+    "155923182": [
+        {
+            "entities": [
+                {
+                    "id": 647777605,
+                    "sku_id": "263684267586",
+                    "item_id": "226365315650",
+                    "quantity": 1,
+                    "name": "格雷珍珠奶茶",
+                    "price": 16,
+                    "original_price": null,
+                    "packing_fee": 0,
+                    "stock": 2946,
+                    "specs": [
+                        {
+                            "name": "规格",
+                            "value": "格雷珍珠奶茶"
+                        }
+                    ],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "value": "少冰"
+                        },
+                        {
+                            "name": "糖量",
+                            "value": "正常糖"
+                        }
+                    ],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 16,
+                    "view_original_price": 16
+                },
+                {
+                    "id": 647777605,
+                    "sku_id": "263684267586",
+                    "item_id": "226365315650",
+                    "quantity": 2,
+                    "name": "格雷珍珠奶茶",
+                    "price": 16,
+                    "original_price": null,
+                    "packing_fee": 0,
+                    "stock": 2946,
+                    "specs": [
+                        {
+                            "name": "规格",
+                            "value": "格雷珍珠奶茶"
+                        }
+                    ],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "value": "正常冰"
+                        },
+                        {
+                            "name": "糖量",
+                            "value": "正常糖"
+                        }
+                    ],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 32,
+                    "view_original_price": 32
+                },
+                {
+                    "id": 647777657,
+                    "sku_id": "263684320834",
+                    "item_id": "226365368898",
+                    "quantity": 1,
+                    "name": "椰果",
+                    "price": 2,
+                    "original_price": null,
+                    "packing_fee": 0,
+                    "stock": 6978,
+                    "specs": [],
+                    "attrs": [],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 2,
+                    "view_original_price": 2
+                }
+            ],
+            "maxDiscountQuantity": 1
+        }
+    ]
+{
+    "514764": [
+        {
+            "entities": [
+                {
+                    "id": 41462630,
+                    "sku_id": "13391176989",
+                    "item_id": "11720837405",
+                    "quantity": 2,
+                    "name": "酸菜炒饭",
+                    "price": 18,
+                    "original_price": null,
+                    "packing_fee": 1,
+                    "stock": 9853,
+                    "specs": [],
+                    "attrs": [],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 36,
+                    "view_original_price": 36
+                }
+            ],
+            "maxDiscountQuantity": 1
+        }
+    ],
+    "544489": [
+        {
+            "entities": [],
+            "maxDiscountQuantity": 1
+        }
+    ],
+    "718244": [
+        {
+            "entities": [],
+            "maxDiscountQuantity": 1
+        }
+    ],
+    "151665871": [
+        {
+            "entities": [],
+            "maxDiscountQuantity": 1
+        }
+    ],
+    "155923182": [
+        {
+            "entities": [
+                {
+                    "id": 647777605,
+                    "sku_id": "263684267586",
+                    "item_id": "226365315650",
+                    "quantity": 1,
+                    "name": "格雷珍珠奶茶",
+                    "price": 16,
+                    "original_price": null,
+                    "packing_fee": 0,
+                    "stock": 2936,
+                    "specs": [
+                        {
+                            "name": "规格",
+                            "value": "格雷珍珠奶茶"
+                        }
+                    ],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "value": "少冰"
+                        },
+                        {
+                            "name": "糖量",
+                            "value": "正常糖"
+                        }
+                    ],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 16,
+                    "view_original_price": 16
+                },
+                {
+                    "id": 647777605,
+                    "sku_id": "263684267586",
+                    "item_id": "226365315650",
+                    "quantity": 2,
+                    "name": "格雷珍珠奶茶",
+                    "price": 16,
+                    "original_price": null,
+                    "packing_fee": 0,
+                    "stock": 2936,
+                    "specs": [
+                        {
+                            "name": "规格",
+                            "value": "格雷珍珠奶茶"
+                        }
+                    ],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "value": "正常冰"
+                        },
+                        {
+                            "name": "糖量",
+                            "value": "正常糖"
+                        }
+                    ],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 32,
+                    "view_original_price": 32
+                },
+                {
+                    "id": 647777657,
+                    "sku_id": "263684320834",
+                    "item_id": "226365368898",
+                    "quantity": 7,
+                    "name": "椰果",
+                    "price": 2,
+                    "original_price": null,
+                    "packing_fee": 0,
+                    "stock": 6977,
+                    "specs": [],
+                    "attrs": [],
+                    "weight": 0,
+                    "extra": {},
+                    "view_discount_price": 14,
+                    "view_original_price": 14
+                }
+            ],
+            "maxDiscountQuantity": 1
+        }
+    ],
+    "160260664": [
+        {
+            "entities": [],
+            "maxDiscountQuantity": 1
+        }
+    ]
+}
+}
+
+
+

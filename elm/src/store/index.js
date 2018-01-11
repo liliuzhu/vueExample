@@ -4,21 +4,25 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    footerTabbar: true
+    footerTabbar: true,
+    shopStatus: 0
 };
 const actions = {
-    footerTabbarStatus({commit}, status) {
-        commit('footerTabbarStatus', status);
+    footerTabbar({commit}, status) {
+        commit('footerTabbar', status);
     },
     showFooterTabbar({commit}) {
         commit('showFooterTabbar');
     },
     hideFooterTabbar({commit}) {
         commit('hideFooterTabbar');
+    },
+    shopStatus({commit}, status) {
+        commit('shopStatus', status);
     }
 };
 const mutations = {
-    footerTabbarStatus(state, status = false) {
+    footerTabbar(state, status = false) {
         state.footerTabbar = status;
     },
     showFooterTabbar(state) {
@@ -26,11 +30,17 @@ const mutations = {
     },
     hideFooterTabbar(state) {
         state.footerTabbar = false;
+    },
+    shopStatus(state, status = 0) {
+        state.shopStatus = status;
     }
 };
 const getters = {
     footerTabbar(state) {
         return state.footerTabbar;
+    },
+    shopStatus(state) {
+        return state.shopStatus;
     }
 };
 

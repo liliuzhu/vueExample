@@ -30,9 +30,10 @@ export function analysismageHash(imageHash = '', isShear = false, rwidth = 130, 
         return '';
     }
     if (isShear) {
-        return `//fuss10.elemecdn.com/${hash.substr(0, 1)}/${hash.substr(1, 2)}/${hash.slice(3)}.${extension}?imageMogr/thumbnail/!${width}x${height}r/gravity/Center/crop/${width}x${height}/`;
+        return `https://fuss10.elemecdn.com/${hash.substr(0, 1)}/${hash.substr(1, 2)}/${hash.slice(3)}.${extension}?imageMogr/thumbnail/!${width}x${height}r/gravity/Center/crop/${width}x${height}/`;
     } else {
-        return `//fuss10.elemecdn.com/${hash.substr(0, 1)}/${hash.substr(1, 2)}/${hash.slice(3)}.${extension}?imageMogr/format/webp/`;
+        // return `https://fuss10.elemecdn.com/${hash.substr(0, 1)}/${hash.substr(1, 2)}/${hash.slice(3)}.${extension}?imageMogr/format/webp/`;
+        return `https://fuss10.elemecdn.com/${hash.substr(0, 1)}/${hash.substr(1, 2)}/${hash.slice(3)}.${extension}`;
     }
 }
 

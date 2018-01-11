@@ -6,6 +6,8 @@ import order from '@/components/order/order';
 import discover from '@/components/discover/discover';
 import profile from '@/components/profile/profile';
 import recommend from '@/components/recommend/recommend';
+import exchange from '@/components/exchange/exchange';
+import shop from '@/components/shop/shop';
 
 Vue.use(Router);
 
@@ -19,6 +21,8 @@ export default new Router({
             {path: '/discover', name: 'discover', component: discover},
             {path: '/profile', name: 'profile', component: profile},
             {path: '/recommend', name: 'recommend', component: recommend},
+            {path: '/exchange', name: 'exchange', component: exchange},
+            {path: '/shop', name: 'shop', component: shop},
             {path: '*', redirect: '/msite'}
         ]
 })

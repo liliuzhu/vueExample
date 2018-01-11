@@ -112,6 +112,9 @@
         data() {
             return {};
         },
+        mounted() {
+            document.title = '我的';
+        },
         methods: {
             back() {
                 this.$router.back();
@@ -186,14 +189,14 @@
                 }
             }
         }
-        .red_packets{
+        .red_packets {
             display: table;
             width: 100%;
             height: 2.24rem;
             height: 22.4vw;
             border-bottom: 1px solid #ddd;
             background-color: #fff;
-            .item_packets{
+            .item_packets {
                 &:not(:last-child) {
                     border-right: 1px solid #ddd;
                 }
@@ -201,13 +204,13 @@
                 width: 33.3333%;
                 vertical-align: middle;
                 text-align: center;
-                svg{
+                svg {
                     width: .693333rem;
                     width: 6.933333vw;
                     height: .693333rem;
                     height: 6.933333vw;
                 }
-                .text{
+                .text {
                     margin-top: .133333rem;
                     margin-top: 1.333333vw;
                     font-size: .32rem;
@@ -219,7 +222,7 @@
                 }
             }
         }
-        .profile_options{
+        .profile_options {
             margin-top: .266667rem;
             margin-top: 2.666667vw;
             border-top: 1px solid #ddd;
@@ -228,19 +231,19 @@
             line-height: .453333rem;
             line-height: 4.533333vw;
             background: #fff;
-            .option{
+            .option {
                 font-size: .426667rem;
                 color: #333;
                 display: flex;
                 align-items: center;
                 padding-left: .666667rem;
                 padding-left: 6.666667vw;
-                .option_icon{
+                .option_icon {
                     margin-left: -.266667rem;
                     margin-left: -2.666667vw;
                     margin-right: .266667rem;
                     margin-right: 2.666667vw;
-                    svg{
+                    svg {
                         width: .48rem;
                         width: 4.8vw;
                         height: .48rem;
@@ -250,13 +253,13 @@
                 &:not(:last-child) .option_text {
                     border-bottom: 1px solid #eee;
                 }
-                .option_text{
+                .option_text {
                     display: flex;
                     justify-content: space-between;
                     width: 100%;
                     padding: .373333rem .266667rem .373333rem 0;
                     padding: 3.733333vw 2.666667vw 3.733333vw 0;
-                    .option_detail svg{
+                    .option_detail svg {
                         width: .266667rem;
                         width: 2.666667vw;
                         height: .266667rem;

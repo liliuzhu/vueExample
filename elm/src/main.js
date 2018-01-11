@@ -16,7 +16,8 @@ Vue.config.productionTip = false;
 * */
 Vue.prototype.$ajax = axios;
 Vue.prototype.custom = {
-    hasServer: true
+    hasServer: true,
+    availHeight: window.innerHeight || document.documentElement.clientHeight || document.body.offsetHeight
 };
 
 /* eslint-disable no-new */

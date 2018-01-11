@@ -56,7 +56,7 @@
         </section>
         <module-title title="推荐商家"></module-title>
         <shopList ref="shopList" :shopList="shopList"></shopList>
-        <loadingShop v-show="showLoading"></loadingShop>
+        <loadingShop :isEnd="isEnd"></loadingShop>
         <transition name="fade">
             <div @click="backTop" v-show="seachFixed" class="backTo_wrapper">
                 <svg class="backTop_icon">
@@ -83,7 +83,8 @@
                 shopList: [],
                 initScrollTop: 0,
                 seachFixed: false,
-                showLoading: false
+                loading: false,
+                isEnd: false
             };
         },
         props: {
@@ -103,12 +104,13 @@
             }
         },
         mounted() {
+            document.title = '李留住高仿饿了么，仅为学习之用，如有侵权请联系我';
             this.initScrollTop = this.$refs.search_wrapper.offsetTop;
-            document.addEventListener("scroll", this.listenCallback);
+            document.addEventListener("scroll", this._listenCallback);
             this.getLoactonsAndWeather();
         },
         beforeDestroy() {
-            document.removeEventListener("scroll", this.listenCallback);
+            document.removeEventListener("scroll", this._listenCallback);
         },
         watch: {
             location() {
@@ -116,15 +118,15 @@
             }
         },
         methods: {
-            listenCallback() {
-                window.throttle2(this.scrollCallback);
+            _listenCallback() {
+                window.throttle2(this._scrollCallback);
             },
             analysismageHash,
-            scrollCallback() {
+            _scrollCallback() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
                 this.seachFixed = scrollTop > this.initScrollTop;
                 let leaveTop = this.$refs.shopList.$el.getBoundingClientRect().bottom;
-                let availHeight = window.screen.availHeight * (window.devicePixelRatio || 1);
+                let availHeight = this.custom.availHeight;
                 if (leaveTop < availHeight) {
                     this.loadMoreShop(this.shopList.length);
                 }
@@ -139,14 +141,14 @@
                     if (!this.location.longitude || !this.location.latitude) {
                         return false;
                     }
-                    let url = '/api//batch/v2';
+                    let url = '/api/batch/v2';
                     let longitude = this.location.longitude;
                     let latitude = this.location.latitude;
                     let data = {
                         requests: {
                             foodEntryData: {
                                 method: "GET",
-                                url: `/shopping/v2/entries?latitude=${latitude}&longitude=${longitude}&templates[]=main_template`
+                                url: `/shopping/openapi/entries?latitude=${latitude}&longitude=${longitude}&templates[]=main_template&templates[]=favourable_template`
                             },
                             hotwords: {
                                 method: "GET",
@@ -175,7 +177,7 @@
                         })
                         .then((res) => {
                             this.locationInfo = res.data;
-                            this.loadMoreShop(0, 16);
+                            this.loadMoreShop();
                         })
                         .catch(err => {
                             console.error('batch/v2', err);
@@ -194,7 +196,7 @@
                         })
                         .then((res) => {
                             this.locationInfo = res.data;
-                            this.loadMoreShop(0, 16);
+                            this.loadMoreShop();
                         })
                         .catch((err) => {
                             console.error('reverse_geo_coding.json', err);
@@ -202,10 +204,10 @@
                 }
             },
             loadMoreShop(offset = 0, limit = 8) {
-                if (this.showLoading || !this.location.longitude || !this.location.latitude) {
+                if (this.loading || !this.location.longitude || !this.location.latitude) {
                     return false;
                 }
-                this.showLoading = true;
+                this.loading = true;
                 let longitude = this.location.longitude;
                 let latitude = this.location.latitude;
                 if (this.custom.hasServer) {
@@ -213,7 +215,7 @@
                     this.$ajax.get(url)
                         .then((res) => {
                             this.shopList = this.shopList.concat(res.data);
-                            this.showLoading = false;
+                            this.loading = false;
                         })
                         .catch((err) => {
                             console.error('loadMoreShop', err);
@@ -223,7 +225,7 @@
                     this.$ajax.get(url)
                         .then((res) => {
                             this.shopList = this.shopList.concat(res.data);
-                            this.showLoading = false;
+                            this.loading = false;
                         })
                         .catch((err) => {
                             console.error('loadMoreShop.json', err);
@@ -508,15 +510,6 @@
     }
 </style>
 <style rel="stylesheet/css" type="text/css" lang="less">
-    .fade-enter-active, .fade-enter-active {
-        transition: opacity .3s;
-        opacity: 1;
-    }
-
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    }
-
     .mint-swipe-indicator {
         margin: 0 .066667rem;
         margin: 0 .666667vw;

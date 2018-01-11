@@ -28,7 +28,7 @@
             },
             fixed: {
                 type: Boolean,
-                default: false
+                default: true
             }
         }
     };
@@ -38,7 +38,6 @@
         height: 1.173333rem;
         height: 11.733333vw;
         .mint-header {
-            position: relative;
             display: flex;
             -webkit-align-items: center;
             align-items: center;

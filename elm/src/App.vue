@@ -34,9 +34,9 @@
         methods: {
             checkRoute(currentPath) {
                 if (this.showToolbarRouters.indexOf(currentPath) !== -1) {
-                    this.$store.dispatch('footerTabbarStatus', true);
+                    this.$store.dispatch('footerTabbar', true);
                 } else {
-                    this.$store.dispatch('footerTabbarStatus');
+                    this.$store.dispatch('footerTabbar');
                 }
             },
             getLocation() {

@@ -1,11 +1,12 @@
 <template>
     <section class="shop_list">
         <ul>
-            <li v-for="(shop,index) in shopList" class="shop_container">
+            <router-link tag="li" :to="{path:'/shop',query:{id:shop.id}}" v-for="(shop,index) in shopList" :key="index"
+                         :sort_index="index" class="shop_container">
                 <div class="shop_info">
                     <div class="logo_container">
                         <div class="logo_main">
-                            <img :src="analysismageHash(shop.image_path)" :alt="shop.name">
+                            <img :src="analysismageHash(shop.image_path,true)" :alt="shop.name">
                         </div>
                         <div v-if="shop.is_new" class="new_shop">
                             <span>新店</span>
@@ -78,7 +79,7 @@
                         </div>
                     </section>
                 </div>
-            </li>
+            </router-link>
         </ul>
         <div v-for="fictitiou in fictitious_shop" style="height: 303px" class="fictitious_shop"></div>
     </section>
@@ -94,7 +95,7 @@
         },
         computed: {
             fictitious_shop() {
-                return 10 - this.shopList.length > 0 ? 10 - this.shopList.length : 0;
+                return 8 - this.shopList.length > 0 ? 8 - this.shopList.length : 0;
             }
         },
         props: {
@@ -410,7 +411,7 @@
                                     top: 0;
                                     z-index: 1;
                                     line-height: .746667rem;
-                                    line-height:7.466667vw;
+                                    line-height: 7.466667vw;
                                     height: .746667rem;
                                     height: 7.466667vw;
                                     width: .746667rem;
@@ -454,8 +455,8 @@
                             transform: rotate(0);
                             fill: currentColor;
                             will-change: transform;
-                            &.open{
-                                transform: rotate3d(0,0,1,180deg);
+                            &.open {
+                                transform: rotate3d(0, 0, 1, 180deg);
                                 backface-visibility: hidden;
                             }
                         }

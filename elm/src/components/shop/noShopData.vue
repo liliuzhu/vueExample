@@ -1,44 +1,44 @@
 <template>
-    <div class="order">
-        <pageHeader title="订单" :callback="back"></pageHeader>
-        <section class="NoDataTip-wrapper">
-            <img src="./not_logo.gif">
-            <h3>登录后查看外卖订单</h3>
-            <button>
-                立即登录
-            </button>
+    <div class="no_shop_data_wrap">
+        <section v-if="noShop" class="no_shop_data">
+            <img src="//fuss10.elemecdn.com/f/18/9fb04779371b5b162b41032baf5f3gif.gif">
+            <h3>餐厅不存在</h3>
+            <p>请重试</p>
+            <button @click="$router.go(0);">重试</button>
         </section>
-        <section class="orderbody"></section>
+        <section v-else class="no_shop_data">
+            <img src="//fuss10.elemecdn.com/6/87/4efda8c6bf4734d39faf86fe190c3gif.gif">
+            <h3>没有商品</h3>
+            <p>该商家还没有上传商品</p>
+            <router-link to="/" tag="button">返回首页</router-link>
+        </section>
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import pageHeader from '@/components/pageHeader/pageHeader';
-
     export default {
         data() {
             return {};
         },
-        mounted() {
-            document.title = '我的订单';
-        },
-        methods: {
-            back() {
-                this.$router.back();
+        props: {
+            noShop: {
+                type: Boolean,
+                default: false
             }
         },
-        components: {
-            pageHeader
+        methods: {
         }
     };
 </script>
-<style rel="stylesheet/css" type="text/css" lang="less">
-    .NoDataTip-wrapper {
-        margin-top: 2.666667rem;
-        margin-top: 26.666667vw;
+<style rel="stylesheet/css" type="text/css" lang="less" scoped>
+    .no_shop_data {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: fixed;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
         img {
             display: block;
             width: 5.333333rem;
@@ -50,6 +50,12 @@
             color: #6a6a6a;
             font-weight: 400;
             font-size: .453333rem;
+        }
+        p {
+            margin: 0 0 .333333rem;
+            margin: 0 0 3.333333vw;
+            color: #999;
+            font-size: .306667rem;
         }
         button {
             padding: .266667rem;
