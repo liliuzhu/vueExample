@@ -1,0 +1,30 @@
+[
+    {
+        "activity_id": 215116970,
+        "amount": "8",
+        "condition_type": 1,
+        "description": "限连锁店使用, 2018-01-15到期",
+        "exchange_description": {
+            "highlight": ""
+        },
+        "exchange_left_num": 0,
+        "exchange_tips": {
+            "highlight": "",
+            "text": "限会员可领"
+        },
+        "exchange_type": 3,
+        "hongbao_total_num": 4,
+        "name": "满任意金额可用",
+        "popup_link": "",
+        "popup_tips": {
+            "highlight": "",
+            "text": "本次兑换将消耗0个奖励金，确认兑换吗？"
+        },
+        "popup_type": 1,
+        "status": 3,
+        "success_tips": {
+            "highlight": "",
+            "text": "已将0个奖励金兑成¥8专享红包"
+        }
+    }
+]

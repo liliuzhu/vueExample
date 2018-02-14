@@ -1,0 +1,50 @@
+[
+    {
+        "title": "7元饿了么红包",
+        "image_hash": "7c5f595b52bc6b50c9899398dccffd42jpeg",
+        "points_required": 210,
+        "original_price": 7,
+        "url": "https://h5.ele.me/exchange/?dbredirect=https%3A%2F%2Fgoods.m.duiba.com.cn%2Fmobile%2FappItemDetail%3FappItemId%3D1143916",
+        "corner_marker": "限时优惠"
+    },
+    {
+        "title": "0元抽手机",
+        "image_hash": "efc86fdd75cbc7d0141202f3a89f982ajpeg",
+        "points_required": 10,
+        "original_price": 0,
+        "url": "https://h5.ele.me/exchange/?dbredirect=https%3A%2F%2Factivity.m.duiba.com.cn%2Fnewtools%2Findex%3Fid%3D2625123",
+        "corner_marker": "0元抽奖"
+    },
+    {
+        "title": "阳澄湖大闸蟹礼盒",
+        "image_hash": "d568b479231309654bfa07f28999768bjpeg",
+        "points_required": 9,
+        "original_price": 368,
+        "url": "https://h5.ele.me/exchange/?dbredirect=https%3A%2F%2Fgoods.m.duiba.com.cn%2Fmobile%2FappItemDetail%3FappItemId%3D1428475",
+        "corner_marker": "特价换购"
+    },
+    {
+        "title": "机械手感键鼠套装",
+        "image_hash": "517bbc669132d02deae9300c45097a19jpeg",
+        "points_required": 9,
+        "original_price": 129,
+        "url": "https://h5.ele.me/exchange/?dbredirect=https%3A%2F%2Fgoods.m.duiba.com.cn%2Fmobile%2FappItemDetail%3FappItemId%3D1310550",
+        "corner_marker": "特价换购"
+    },
+    {
+        "title": "智能扫地机器人",
+        "image_hash": "5785c1ca7ceca079926933ca418c9eb7jpeg",
+        "points_required": 9,
+        "original_price": 99,
+        "url": "https://h5.ele.me/exchange/?dbredirect=https%3A%2F%2Fgoods.m.duiba.com.cn%2Fmobile%2FappItemDetail%3FappItemId%3D1544968",
+        "corner_marker": "特价换购"
+    },
+    {
+        "title": "太阳能充电宝",
+        "image_hash": "4f510870b9fdbd4dd4e5c7ca203bd8f4jpeg",
+        "points_required": 9,
+        "original_price": 99,
+        "url": "https://h5.ele.me/exchange/?dbredirect=https%3A%2F%2Fgoods.m.duiba.com.cn%2Fmobile%2FappItemDetail%3FappItemId%3D1476257",
+        "corner_marker": "特价换购"
+    }
+]
