@@ -5,38 +5,38 @@
             "description": "新用户下单立减17元(不与其它活动同享)",
             "icon_color": "70bc46",
             "icon_name": "首单",
-            "id": 804286450,
+            "id": 769035569,
             "is_exclusive_with_food_activity": true,
             "name": "新用户立减(不与其他活动共享)",
             "tips": "新用户下单立减17元(不与其它活动同享)",
             "type": 103
         },
         {
-            "attribute": "{\"70\": {\"1\": 20.0, \"0\": 0}, \"45\": {\"1\": 10.0, \"0\": 0}, \"22\": {\"1\": 6.0, \"0\": 0}}",
-            "description": "满22减6，满45减10，满70减20",
+            "attribute": "{\"70\": {\"1\": 21.0, \"0\": 0}, \"45\": {\"1\": 15.0, \"0\": 0}, \"22\": {\"1\": 12.0, \"0\": 0}}",
+            "description": "满22减12，满45减15，满70减21",
             "icon_color": "f07373",
             "icon_name": "满减",
-            "id": 880142642,
+            "id": 242672954,
             "is_exclusive_with_food_activity": true,
-            "name": "北京周大虾",
-            "tips": "满22减6，满45减10，满70减20",
+            "name": "周大虾满减",
+            "tips": "满22减12，满45减15，满70减21",
             "type": 102
         },
         {
-            "description": "【7折】麻辣龙虾饭双人套餐",
+            "description": "【欢享元旦】菌菇龙虾饭套餐65折！",
             "icon_color": "f07373",
             "icon_name": "折扣",
-            "id": 328765714,
-            "name": "【7折】麻辣龙虾饭双人套餐",
-            "tips": "【7折】麻辣龙虾饭双人套餐"
+            "id": 268959698,
+            "name": "【欢享元旦】菌菇龙虾饭套餐65折！",
+            "tips": "【欢享元旦】菌菇龙虾饭套餐65折！"
         },
         {
-            "description": "【7折】泰咖喱龙虾饭套餐",
+            "description": "【欢享元旦】龙虾饭双人套餐7折！",
             "icon_color": "f07373",
             "icon_name": "折扣",
-            "id": 328762778,
-            "name": "【7折】泰咖喱龙虾饭套餐",
-            "tips": "【7折】泰咖喱龙虾饭套餐"
+            "id": 268640474,
+            "name": "【欢享元旦】龙虾饭双人套餐7折！",
+            "tips": "【欢享元旦】龙虾饭双人套餐7折！"
         },
         {
             "description": "下单可返2元代金券",
@@ -48,7 +48,8 @@
         }
     ],
     "address": "北京市东城区广渠门内大街90-8号地下一层西半侧",
-    "authentic_id": 2372540946385108,
+    "authentic_id": 7332270278677708,
+    "closing_count_down": 0,
     "delivery_mode": {
         "border": "",
         "color": "2395FF",
@@ -56,7 +57,6 @@
             "rgb_from": "00AAFF",
             "rgb_to": "0085FF"
         },
-        "icon_hash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
         "id": 1,
         "is_solid": true,
         "text": "蜂鸟专送",
@@ -65,17 +65,7 @@
     "description": "前方遥不可及 ，美食却只有一步之遥。当你埋头制作 PPT 时，小龙虾正爬出泥洞；当你看着枯燥的报表时，大师傅刚好往锅里洒了一把葱段；当你拥挤在公汽上时，镇江的料酒正冒出一丝香气；在你迷茫的时候，在你开心的时候，在你忙碌的时候，一份热辣的小龙虾会暖胃安心，让你感触生活的有滋有味。",
     "distance": 2534,
     "favored": false,
-    "flavors": [
-        {
-            "id": 236,
-            "name": "小龙虾"
-        },
-        {
-            "id": 265,
-            "name": "简餐"
-        }
-    ],
-    "float_delivery_fee": 6.5,
+    "float_delivery_fee": 9,
     "float_minimum_order_amount": 20,
     "id": 1215108,
     "image_path": "124b3fbf584f92303939ddd084c58ca1png",
@@ -92,41 +82,32 @@
     "opening_hours": [
         "09:30/20:30"
     ],
-    "order_lead_time": 29,
+    "order_lead_time": 28,
     "phone": "4000356060",
     "piecewise_agent_fee": {
-        "description": "配送费¥6.5",
-        "extra_fee": 1.5,
+        "description": "配送费¥9",
+        "extra_fee": 4,
         "is_extra": true,
         "rules": [
             {
-                "fee": 6.5,
+                "fee": 9,
                 "price": 20
             }
         ],
-        "tips": "配送费¥6.5"
+        "tips": "配送费¥9"
     },
-    "platform": 0,
     "promotion_info": "",
     "qualification": {
-        "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=2372540946385108",
+        "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=7332270278677708&realId=1215108",
         "safety_description": "甲级商家"
     },
-    "rating": 4.8,
-    "rating_count": 317,
-    "recent_order_num": 1303,
+    "rating": 4.6,
+    "rating_count": 745,
+    "recent_order_num": 2052,
     "recommend": {
         "is_ad": false,
         "reason": ""
     },
-    "recommend_reasons": [
-        {
-            "name": "回头客多"
-        },
-        {
-            "name": "配送飞快"
-        }
-    ],
     "regular_customer_count": 0,
     "scheme": "eleme://catering?restaurant_id=1215108",
     "shop_sign": {
@@ -134,15 +115,13 @@
         "image_hash": "85606a37a45020edda22f21c48f3c2c8png"
     },
     "status": 1,
-    "support_tags": [],
     "supports": [
         {
             "description": "该商家支持开发票，开票订单金额1元起，请在下单时填写好发票抬头",
             "icon_color": "999999",
             "icon_name": "票",
             "id": 4,
-            "name": "开发票",
-            "two_characters_icon_name": "发票"
+            "name": "开发票"
         }
     ],
     "type": 0,
