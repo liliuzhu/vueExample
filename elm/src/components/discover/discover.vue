@@ -43,12 +43,13 @@
                 </symbol>
             </defs>
         </svg>
-        <pageHeader  :callback="back" title="发现"></pageHeader>
+        <pageHeader :callback="back" title="发现"></pageHeader>
         <!--parts活动-->
         <section class="parts">
             <div v-for="part in parts" class="entry"
                  :class="{list2:part.length%2===0&&!part[0].sub_pic_hash,list3:part.length%2===1&&!part[0].sub_pic_hash}">
-                <a v-for="item in part" :href="item.content_url" :class="{'sub-pic-hash':item.sub_pic_hash}">
+                <a v-for="item in part" @click="judgePath(item.content_url)" href="javascript:void(0);"
+                   :class="{'sub-pic-hash':item.sub_pic_hash}">
                     <div v-if="!item.sub_pic_hash" class="content-wrapper">
                         <p class="title" :style="{color:item.title_color}">{{item.title}}</p>
                         <p class="tips">{{item.subtitle}}</p>
@@ -91,7 +92,8 @@
                 <p class="activity-sub-title">{{crayfish.activities.gift.sub_title}}</p>
             </div>
             <div class="activity-body">
-                <a v-for="item in suggest" @touchend.stop.proevent="function(){}" :href="item.url" class="discover-food">
+                <a v-for="item in suggest" @touchend.stop.proevent="function(){}" :href="item.url"
+                   class="discover-food">
                     <img
                         :src="analysismageHash(item.image_hash)">
                     <div>
@@ -241,6 +243,13 @@
                         .catch((err) => {
                             console.error("discover", err);
                         });
+                }
+            },
+            judgePath(path) {
+                if (/http/ig.test(path)) {
+                    window.location.href = path;
+                } else {
+                    this.$router.push(path);
                 }
             }
         },

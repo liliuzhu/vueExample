@@ -10,6 +10,7 @@
     import footerTabbar from './components/footerTabbar/footerTabbar';
     import svgSymbol from './components/svgSymbol/svgSymbol';
     import {mapGetters} from 'vuex';
+    import {Toast} from 'mint-ui';
 
     export default {
         name: 'app',
@@ -20,6 +21,7 @@
             };
         },
         mounted() {
+            this.checkeEquipment();
             this.checkRoute(this.$route.path);
             this.getLocation();
         },
@@ -64,6 +66,17 @@
                 } else {
                     alert('failed' + geoloca.getStatus());
                 }
+            },
+            checkeEquipment() {
+                // let regExp = /Android|iPhone|SymbianOS|Windows Phone|iPad|iPod/i;
+                // if (window.devicePixelRatio) {
+                //
+                // }
+                Toast({
+                    message: '使用游览器的移动设备模式或者移动端浏览体验更好哦！',
+                    position: 'middle',
+                    duration: 5000
+                });
             }
         },
         components: {
