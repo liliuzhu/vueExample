@@ -68,15 +68,14 @@
                 }
             },
             checkeEquipment() {
-                // let regExp = /Android|iPhone|SymbianOS|Windows Phone|iPad|iPod/i;
-                // if (window.devicePixelRatio) {
-                //
-                // }
-                Toast({
-                    message: '使用游览器的移动设备模式或者移动端浏览体验更好哦！',
-                    position: 'middle',
-                    duration: 5000
-                });
+                let regExp = /Android|iPhone|SymbianOS|Windows Phone|iPad|iPod/i;
+                if (!regExp.test(navigator.userAgent)) {
+                    Toast({
+                        message: '使用游览器的移动设备模式或者移动端浏览体验更好哦！',
+                        position: 'middle',
+                        duration: 5000
+                    });
+                }
             }
         },
         components: {
