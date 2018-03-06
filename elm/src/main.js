@@ -6,10 +6,12 @@ import App from './App';
 import router from './router';
 import store from './store';
 import MintUI from 'mint-ui';
+import VueLazyload from 'vue-lazyload';
 import '@/common/style/index.less';
 import 'mint-ui/lib/style.css';
 
 Vue.use(MintUI);
+Vue.use(VueLazyload);
 Vue.config.productionTip = false;
 /*
 * 自定义全局属性---是否有服务器

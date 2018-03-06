@@ -6,7 +6,7 @@
                 <div class="shop_info">
                     <div class="logo_container">
                         <div class="logo_main">
-                            <img :src="analysismageHash(shop.image_path,true)" :alt="shop.name">
+                            <img v-lazy="analysismageHash(shop.image_path,true)" :alt="shop.name">
                         </div>
                         <div v-if="shop.is_new" class="new_shop">
                             <span>新店</span>

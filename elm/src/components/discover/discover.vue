@@ -54,8 +54,8 @@
                         <p class="title" :style="{color:item.title_color}">{{item.title}}</p>
                         <p class="tips">{{item.subtitle}}</p>
                     </div>
-                    <img v-if="item.sub_pic_hash" class="sub-pic" :src="analysismageHash(item.sub_pic_hash)">
-                    <img v-else class="icon" :src="analysismageHash(item.main_pic_hash)">
+                    <img v-if="item.sub_pic_hash" class="sub-pic" v-lazy="analysismageHash(item.sub_pic_hash)">
+                    <img v-else class="icon" v-lazy="analysismageHash(item.main_pic_hash)">
                 </a>
             </div>
         </section>
@@ -95,7 +95,7 @@
                 <a v-for="item in suggest" @touchend.stop.proevent="function(){}" :href="item.url"
                    class="discover-food">
                     <img
-                        :src="analysismageHash(item.image_hash)">
+                        v-lazy="analysismageHash(item.image_hash)">
                     <div>
                         <p class="food-name zhu_ellipsis">{{item.title}}</p>
                         <div class="food-info zhu_clearfix">
@@ -136,7 +136,7 @@
                 <a v-for="item in crayfish.selected_android.foods"
                    class="discover-food">
                     <img
-                        :src="analysismageHash(item.image_hash)">
+                        v-lazy="analysismageHash(item.image_hash)">
                     <div>
                         <p class="food-name zhu_ellipsis">{{item.title}}</p>
                         <div class="food-info zhu_clearfix">

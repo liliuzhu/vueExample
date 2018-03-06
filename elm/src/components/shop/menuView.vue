@@ -20,7 +20,7 @@
                         <div class="food_root">
                             <span v-if="food.image_path" class="food_logo">
                                 <foodAttributes class="attrTag" :foodAttributes="food.attributes"></foodAttributes>
-                                <img :alt="food.name" :src="analysismageHash(food.image_path,true,140)">
+                                <img :alt="food.name" v-lazy="analysismageHash(food.image_path,true,140)">
                             </span>
                             <section class="food_info">
                                 <p class="food_name">{{food.name}}
