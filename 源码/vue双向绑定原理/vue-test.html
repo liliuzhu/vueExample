@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue双向绑定原理探索</title>
+    <script src="vue-model.js"></script>
+</head>
+<body>
+<div class="app">
+    <form>
+        <input type="text" v-model="number">
+        <button type="button" v-click="increment">增加</button>
+    </form>
+    <h3 v-bind="number"></h3>
+</div>
+<script>
+    var app = new myVue({
+       el: '#app',
+       data: {
+           number: 0
+       },
+        methods:{
+           increment() {
+               this.number ++;
+           }
+        }
+    });
+</script>
+</body>
+</html>
