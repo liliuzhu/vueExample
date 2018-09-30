@@ -1,3 +1,4 @@
+// bolg 地址 https://mp.weixin.qq.com/s/MGsEGejaADVHGlZFYQgCnQ
 function myVue(options) { //定义一个myVue构造函数：
     this._init(options)
 }
