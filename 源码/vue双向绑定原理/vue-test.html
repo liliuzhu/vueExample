@@ -9,7 +9,7 @@
     <script src="vue-model.js"></script>
 </head>
 <body>
-<div class="app">
+<div id="app">
     <form>
         <input type="text" v-model="number">
         <button type="button" v-click="increment">增加</button>
@@ -17,17 +17,21 @@
     <h3 v-bind="number"></h3>
 </div>
 <script>
-    var app = new myVue({
-       el: '#app',
-       data: {
-           number: 0
-       },
-        methods:{
-           increment: function () {
-               this.number ++;
-           }
-        }
-    });
+    window.onload = function () {
+        var app = new myVue({
+            el: '#app',
+            data: function () {
+                return {
+                    number: 0
+                }
+            },
+            methods:{
+                increment: function () {
+                    this.number ++;
+                }
+            }
+        });
+    }
 </script>
 </body>
 </html>
