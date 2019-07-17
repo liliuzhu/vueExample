@@ -86,8 +86,7 @@
     ;
 </script>
 
-<style rel="stylesheet/css" type="text/css" lang="less" scoped>
-    .wrapper {
-    }
+<style rel="stylesheet/css" type="text/css" lang="less">
+
 </style>
 
