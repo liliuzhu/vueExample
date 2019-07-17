@@ -349,6 +349,8 @@
                             margin-right: .266667rem;
                             margin-right: 2.666667vw;
                             position: relative;
+                            background: #fff url('./food_detail.jpeg') no-repeat center center;
+                            background-size: 100%;
                             .attrTag {
                                 position: absolute;
                                 top: 0;
