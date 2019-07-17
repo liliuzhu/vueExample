@@ -68,10 +68,16 @@ function throttle(fn = new Function(), delay = 200, mustRunDelay = 100) {
         }
     };
 }
-var ticking = false;
-function throttle2(callback){
-    if(!ticking) {
-        requestAnimationFrame(callback);
+
+function throttle2(fn) {
+    let ticking = false;
+    return function () {
+        if (!ticking) {
+            requestAnimationFrame(_ => {
+                typeof fn === 'function' && fn();
+                ticking = false;
+            });
+            ticking = true;
+        }
     }
-    ticking = false;
 }
