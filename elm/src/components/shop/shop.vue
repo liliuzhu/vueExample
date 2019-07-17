@@ -68,6 +68,11 @@
         mounted() {
             this.getShopInfoById();
         },
+        beforeDestroy() {
+            this.$refs.menuView.$off('containerScroll');
+            this.$refs.shopRate.$off('containerScroll');
+            this.$refs.shopDetail.$off('containerScroll');
+        },
         methods: {
             initShop() {
                 this.$nextTick(() => {
@@ -173,8 +178,8 @@
         .shop_info_wrap {
             width: 100%;
             height: 100vh;
-            padding-right: .226667rem;
-            padding-right: 2.266667vw;
+            /*padding-right: .226667rem;*/
+            /*padding-right: 2.266667vw;*/
             box-sizing: content-box;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
