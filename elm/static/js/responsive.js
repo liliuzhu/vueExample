@@ -63,7 +63,7 @@
     }
 }(window, window.lib || (window.lib = {}));
 
-// ;(function(win, lib) {
+// ;(function(win, lib) { // lib-flexible
 //     var doc = win.document;
 //     var docEl = doc.documentElement;
 //     var metaEl = doc.querySelector('meta[name="viewport"]');
