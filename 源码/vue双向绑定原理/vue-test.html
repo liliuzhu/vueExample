@@ -12,9 +12,14 @@
 <div id="app">
     <form>
         <input type="text" v-model="number">
-        <button type="button" v-click="increment">增加</button>
+        <button type="button" v-click="increment1">增加</button>
+    </form>
+    <form>
+        <input type="text" v-model="cub">
+        <button type="button" v-click="increment2">增加2</button>
     </form>
     <h3 v-bind="number"></h3>
+    <h3 v-bind="cub"></h3>
 </div>
 <script>
     window.onload = function () {
@@ -22,12 +27,16 @@
             el: '#app',
             data: function () {
                 return {
-                    number: 0
+                    number: 0,
+                    cub: 1
                 }
             },
             methods:{
-                increment: function () {
+                increment1: function () {
                     this.number ++;
+                },
+                increment2: function () {
+                    this.cub ++;
                 }
             }
         });

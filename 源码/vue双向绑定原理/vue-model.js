@@ -13,34 +13,40 @@ myVue.prototype._init = function (options) { // 初始化函数
     this._complie(this.$el)
 };
 myVue.prototype._obverse  = function (obj) { // 对data进行处理，重写data的set和get函数
-    var value;
+    if (!obj || typeof obj !== 'object') {
+        return
+    }
+    function defineReactive (obj, key, value) {
+        this._binding[key] = {
+            _directives: []
+        }
+        // var value = obj[key];
+        if(typeof value === 'object'){ // 如果值还是对象
+            this._obverse(value)
+        }
+        var binding = this._binding[key];
+        Object.defineProperty(obj, key, { // 关键
+            enumerable: true,
+            configurable: true,
+            get: function () {
+                console.log('获取'+key+value)
+                return value
+            },
+            set: function (newVal) {
+                console.log('更新'+key+value)
+                if(value !== newVal){
+                    value = newVal;
+                    binding._directives.forEach(function (item) { // number改变时，触发_binding[number]._directives中的绑定的Watcher更新
+                        item.update();
+                    })
+                }
+            }
+        })
+    }
+
     for(var key in obj){ // 遍历obj对象
         if(obj.hasOwnProperty(key)){ // 是否私有属性
-            this._binding[key] = {
-                _directives: []
-            }
-            value = obj[key];
-            if(typeof value === 'object'){ // 如果值还是对象
-                this._obverse(value)
-            }
-            var binding = this._binding[key];
-            Object.defineProperty(this.$data, key, { // 关键
-                enumerable: true,
-                configurable: true,
-                get: function () {
-                    console.log('获取'+value)
-                    return value
-                },
-                set: function (newVal) {
-                    console.log('更新'+value)
-                    if(value !== newVal){
-                        value = newVal;
-                        binding._directives.forEach(function (item) { // number改变时，触发_binding[number]._directives中的绑定的Watcher更新
-                            item.update();
-                        })
-                    }
-                }
-            })
+            defineReactive.bind(this, obj, key, obj[key])()
         }
     }
 }
