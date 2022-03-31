@@ -1,2 +1,2 @@
 # vueExample
-个人Vue学习实例
+个人Vue2学习实例
