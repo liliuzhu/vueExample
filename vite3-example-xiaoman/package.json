@@ -1,0 +1,35 @@
+{
+  "name": "vite3-example-xiaoman",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "vue-tsc --noEmit && vite build --mode production",
+    "test": "vue-tsc --noEmit && vite build --mode test",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.30",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.11.12",
+    "@vitejs/plugin-legacy": "^4.0.1",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "less": "^4.1.3",
+    "ora": "^6.1.2",
+    "qiniu": "^7.8.0",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "terser": "^5.16.5",
+    "typescript": "^4.6.4",
+    "unplugin-vue-define-options": "^1.1.1",
+    "vite": "^3.1.0",
+    "vite-plugin-pwa": "^0.14.4",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-tsc": "^0.40.4"
+  }
+}
