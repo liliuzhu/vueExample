@@ -7,8 +7,9 @@ import vueSetupExtend from 'vite-plugin-vue-setup-extend'; // 支持组件命名
 import legacy from '@vitejs/plugin-legacy' // 为打包后的文件提供传统浏览器兼容性支持。
 import { visualizer } from 'rollup-plugin-visualizer' // 打包分析
 
-// import vitePluginQiniu from './vite-plugins/index'
-import vitePluginQiniu from './vite-plugins/index.es'
+// import vitePluginQiniu from './vite-plugins/index.es'
+// import vitePluginQiniu from './vite-plugins'
+import vitePluginQiniu from 'vite-plugin-qiniu-cdn'
 // const vitePluginQiniu = require('./vite-plugins/index.es')
 
 console.log(1212, vitePluginQiniu)
@@ -16,7 +17,7 @@ console.log(1212, vitePluginQiniu)
 import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: 'http://busi.rrcimg.com/vite-plugin-qiniu/online/',
   plugins: [
     // visualizer({ open: true }),
     VitePWA({
@@ -45,7 +46,7 @@ export default defineConfig({
       }
     }
   }), vueSetupExtend(), vitePluginQiniu({
-      enable: true,
+      enable: false,
       accessKey: '7XpXEW2l-DUawPpfykszsTFNOr6rwW7peloKUDnT',
       secretKey: '1sMLgliCmIakJUoCVZc1gL6MNyK7w6r9IhBW1XwG',
       exclude: /index\.html$|manifest\.[0-9a-zA-Z]+\.js$/,

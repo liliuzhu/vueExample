@@ -50,7 +50,7 @@ const change = ()=>{
 }
 const reset = ()=>{
   // Test.$reset()
-  Test.$state = {current: 1, name: '2223'}
+  Test.$state = {current: 1, name: '2223', user: { name:'', age:1 }}
 }
 
 </script>
