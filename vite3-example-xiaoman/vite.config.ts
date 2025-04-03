@@ -21,6 +21,10 @@ export default defineConfig({
   plugins: [
     // visualizer({ open: true }),
     VitePWA({
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: false,
+      },
     workbox:{
       cacheId:"XIaoman",//缓存名称
       runtimeCaching:[
